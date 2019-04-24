@@ -1,0 +1,75 @@
+CREATE TABLE Employee
+(employeeID VARCHAR(30) NOT NULL,
+fName VARCHAR(30) NOT NULL, 
+lName VARCHAR(30) NOT NULL, 
+DOB DATE NOT NULL, 
+PRIMARY KEY(employeeID)
+);
+
+CREATE TABLE Truck
+(truckID VARCHAR(30) NOT NULL,
+mileage INT NOT NULL, 
+truckSize INT NOT NULL,  
+registration VARCHAR(30) NOT NULL, 
+serviceDate DATE, 
+PRIMARY KEY(truckID)
+);
+
+CREATE TABLE Client
+(clientID VARCHAR(30) NOT NULL,
+fName VARCHAR(30) NOT NULL, 
+lName VARCHAR(30) NOT NULL,
+phone VARCHAR(12),  
+PRIMARY KEY(clientID)
+);
+
+CREATE TABLE Job
+(jobID VARCHAR(30) NOT NULL,
+fromLoc VARCHAR(30) NOT NULL, 
+toLoc VARCHAR(30) NOT NULL,  
+tot_hours INT, 
+estCost DECIMAL(7,2), 
+jobDate DATE, 
+clientID VARCHAR(30) NOT NULL, 
+services VARCHAR(30),
+PRIMARY KEY(jobID),
+FOREIGN KEY(clientID) REFERENCES Client(clientID)
+);
+
+CREATE TABLE JobTrucks
+(jobID VARCHAR(30) NOT NULL, 
+truckID VARCHAR(30) NOT NULL,
+PRIMARY KEY(jobID,truckID), 
+FOREIGN KEY(jobID) REFERENCES Job(jobID), 
+FOREIGN KEY(truckID) REFERENCES Truck(truckID)
+);
+ 
+CREATE TABLE JobEmps
+(jobID VARCHAR(30) NOT NULL, 
+employeeID VARCHAR(30) NOT NULL,
+PRIMARY KEY(jobID,employeeID), 
+FOREIGN KEY(jobID) REFERENCES Job(jobID), 
+FOREIGN KEY(employeeID) REFERENCES Employee(employeeID)
+);
+ 
+CREATE TABLE StorageUnit
+(unitNumber INT NOT NULL,
+location VARCHAR(30) NOT NULL, 
+rate VARCHAR(30) NOT NULL, 
+size VARCHAR(30) NOT NULL, 
+clientID VARCHAR(30) NOT NULL, 
+PRIMARY KEY(unitNumber,location), 
+FOREIGN KEY(clientID) REFERENCES Client(clientID)
+);
+
+CREATE TABLE PaysFor
+(clientID VARCHAR(30) NOT NULL,
+jobID VARCHAR(30) NOT NULL,
+unitNumber INT,
+cost INT,
+PRIMARY KEY(clientID,jobID),
+FOREIGN KEY(clientID) REFERENCES Client(clientID),
+FOREIGN KEY(jobID) REFERENCES Job(jobID),
+FOREIGN KEY(unitNumber) REFERENCES StorageUnit(unitNumber)
+);
+ 
