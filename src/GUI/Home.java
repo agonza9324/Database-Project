@@ -5,6 +5,9 @@
  */
 package GUI;
 
+import java.sql.Connection;
+import java.sql.Statement;
+
 /**
  *
  * @author josed
@@ -199,6 +202,11 @@ public class Home extends javax.swing.JFrame {
      * @param args the command line arguments
      */
     public static void main(String args[]) {
+        
+//        Connection connection = Connector.getConnection();
+//        Statement stmt = connection.createStatement();
+//        stmt.executeQuery("SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE table_schema = \"DATABASE_NAME\"");
+        
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
