@@ -30,31 +30,231 @@ public class Home extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel1 = new javax.swing.JPanel();
+        NavigationPanel = new javax.swing.JPanel();
+        EmployeesButton = new javax.swing.JButton();
+        JobsButton = new javax.swing.JButton();
+        TrucksButton = new javax.swing.JButton();
+        StorageButton = new javax.swing.JButton();
+        ClientsButton = new javax.swing.JButton();
+        ScheduleButton = new javax.swing.JButton();
         jPanel2 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
-        jPanel3 = new javax.swing.JPanel();
+        DetailsPane = new javax.swing.JTabbedPane();
+        ScheduleTab = new javax.swing.JPanel();
+        label6 = new java.awt.Label();
+        EmployeesTab = new javax.swing.JPanel();
+        label1 = new java.awt.Label();
+        AddEmployees = new javax.swing.JButton();
+        DeleteEmployee = new javax.swing.JButton();
+        EmployeeTabLayer = new javax.swing.JLayeredPane();
+        AddEmployeeLayer = new javax.swing.JPanel();
+        newEmployeeId = new javax.swing.JTextField();
+        label11 = new java.awt.Label();
+        CancelAddEmployee = new javax.swing.JButton();
+        NewEmployeeLName = new javax.swing.JTextField();
+        label8 = new java.awt.Label();
+        label7 = new java.awt.Label();
+        label10 = new java.awt.Label();
+        SubmitAddEmployee = new javax.swing.JButton();
+        NewEmployeeFName = new javax.swing.JTextField();
+        label9 = new java.awt.Label();
+        NewEmployeeDOB = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
-        jLabel1 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
-        jPanel4 = new javax.swing.JPanel();
+        ShowEmployeesLayer = new javax.swing.JPanel();
+        TrucksTab = new javax.swing.JPanel();
+        TruckTabLayer = new javax.swing.JLayeredPane();
+        ShowTrucksLayer = new javax.swing.JPanel();
+        AddTruckLayer = new javax.swing.JPanel();
+        newTruckId = new javax.swing.JTextField();
+        label12 = new java.awt.Label();
+        CancelAddTruck = new javax.swing.JButton();
+        NewTruckSize = new javax.swing.JTextField();
+        label13 = new java.awt.Label();
+        label14 = new java.awt.Label();
+        label15 = new java.awt.Label();
+        SubmitAddTruck = new javax.swing.JButton();
+        NewTruckMileage = new javax.swing.JTextField();
+        label16 = new java.awt.Label();
+        NewTruckRegistration = new javax.swing.JTextField();
+        jSeparator2 = new javax.swing.JSeparator();
+        label31 = new java.awt.Label();
+        NewTruckService = new javax.swing.JTextField();
+        label2 = new java.awt.Label();
+        AddTruck = new javax.swing.JButton();
+        DeleteTruck = new javax.swing.JButton();
+        JobsTab = new javax.swing.JPanel();
+        label5 = new java.awt.Label();
+        AddJob = new javax.swing.JButton();
+        DeleteJob = new javax.swing.JButton();
+        JobTabLayer = new javax.swing.JLayeredPane();
+        ShowJobsLayer = new javax.swing.JPanel();
+        AddJobLayer = new javax.swing.JPanel();
+        newJobId = new javax.swing.JTextField();
+        label17 = new java.awt.Label();
+        CancelAddJob = new javax.swing.JButton();
+        NewJobToLoc = new javax.swing.JTextField();
+        label18 = new java.awt.Label();
+        label19 = new java.awt.Label();
+        label20 = new java.awt.Label();
+        SubmitAddJob = new javax.swing.JButton();
+        NewJobFromLoc = new javax.swing.JTextField();
+        label21 = new java.awt.Label();
+        NewJobHours = new javax.swing.JTextField();
+        label22 = new java.awt.Label();
+        NewJobCost = new javax.swing.JTextField();
+        label23 = new java.awt.Label();
+        NewJobDate = new javax.swing.JTextField();
+        label24 = new java.awt.Label();
+        NewJobClientId = new javax.swing.JTextField();
+        label25 = new java.awt.Label();
+        NewJobService = new javax.swing.JTextField();
+        jSeparator4 = new javax.swing.JSeparator();
+        ClientsTab = new javax.swing.JPanel();
+        label4 = new java.awt.Label();
+        AddClient = new javax.swing.JButton();
+        DeleteClient = new javax.swing.JButton();
+        ClientTabLayer = new javax.swing.JLayeredPane();
+        AddClientLayer = new javax.swing.JPanel();
+        newClientId = new javax.swing.JTextField();
+        label26 = new java.awt.Label();
+        CancelAddClient = new javax.swing.JButton();
+        NewClientLName = new javax.swing.JTextField();
+        label27 = new java.awt.Label();
+        label28 = new java.awt.Label();
+        label29 = new java.awt.Label();
+        SubmitAddClient = new javax.swing.JButton();
+        NewClientFName = new javax.swing.JTextField();
+        label30 = new java.awt.Label();
+        NewClientPhone = new javax.swing.JTextField();
+        jSeparator3 = new javax.swing.JSeparator();
+        ShowClientsLayer = new javax.swing.JPanel();
+        StorageTab = new javax.swing.JPanel();
+        label3 = new java.awt.Label();
+        AddStorage = new javax.swing.JButton();
+        DeleteStorage = new javax.swing.JButton();
+        StorageTabLayer = new javax.swing.JLayeredPane();
+        AddStorageLayer = new javax.swing.JPanel();
+        newUnitNum = new javax.swing.JTextField();
+        label32 = new java.awt.Label();
+        CancelAddStorage = new javax.swing.JButton();
+        NewStorageRate = new javax.swing.JTextField();
+        label33 = new java.awt.Label();
+        label34 = new java.awt.Label();
+        label35 = new java.awt.Label();
+        SubmitAddStorage = new javax.swing.JButton();
+        NewStorageLoc = new javax.swing.JTextField();
+        label36 = new java.awt.Label();
+        NewStorageSize = new javax.swing.JTextField();
+        jSeparator5 = new javax.swing.JSeparator();
+        label37 = new java.awt.Label();
+        NewStorageClient = new javax.swing.JTextField();
+        ShowStorageLayer = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(122, 0, 60));
+        setForeground(java.awt.Color.darkGray);
 
-        jPanel1.setBackground(new java.awt.Color(122, 0, 60));
+        NavigationPanel.setBackground(new java.awt.Color(122, 0, 60));
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 100, Short.MAX_VALUE)
+        EmployeesButton.setText("Employees");
+        EmployeesButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        EmployeesButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                EmployeesButtonMouseClicked(evt);
+            }
+        });
+        EmployeesButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EmployeesButtonActionPerformed(evt);
+            }
+        });
+
+        JobsButton.setText("Jobs");
+        JobsButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        JobsButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JobsButtonMouseClicked(evt);
+            }
+        });
+        JobsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                JobsButtonActionPerformed(evt);
+            }
+        });
+
+        TrucksButton.setText("Trucks");
+        TrucksButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        TrucksButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TrucksButtonMouseClicked(evt);
+            }
+        });
+        TrucksButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                TrucksButtonActionPerformed(evt);
+            }
+        });
+
+        StorageButton.setText("Storage Units");
+        StorageButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        StorageButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                StorageButtonMouseClicked(evt);
+            }
+        });
+
+        ClientsButton.setText("Clients");
+        ClientsButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ClientsButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ClientsButtonMouseClicked(evt);
+            }
+        });
+
+        ScheduleButton.setText("Schedule");
+        ScheduleButton.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        ScheduleButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ScheduleButtonMouseClicked(evt);
+            }
+        });
+        ScheduleButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ScheduleButtonActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout NavigationPanelLayout = new javax.swing.GroupLayout(NavigationPanel);
+        NavigationPanel.setLayout(NavigationPanelLayout);
+        NavigationPanelLayout.setHorizontalGroup(
+            NavigationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NavigationPanelLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(NavigationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(EmployeesButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(JobsButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(StorageButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 137, Short.MAX_VALUE)
+                    .addComponent(TrucksButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ClientsButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(ScheduleButton, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+        NavigationPanelLayout.setVerticalGroup(
+            NavigationPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(NavigationPanelLayout.createSequentialGroup()
+                .addGap(199, 199, 199)
+                .addComponent(ScheduleButton)
+                .addGap(18, 18, 18)
+                .addComponent(EmployeesButton)
+                .addGap(18, 18, 18)
+                .addComponent(TrucksButton)
+                .addGap(18, 18, 18)
+                .addComponent(JobsButton)
+                .addGap(18, 18, 18)
+                .addComponent(ClientsButton)
+                .addGap(18, 18, 18)
+                .addComponent(StorageButton)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel2.setBackground(new java.awt.Color(122, 0, 60));
@@ -76,116 +276,1231 @@ public class Home extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
-                .addGap(18, 18, 18)
+                .addGap(149, 149, 149)
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 700, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(223, Short.MAX_VALUE))
+                .addContainerGap(134, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 78, Short.MAX_VALUE)
+                .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 67, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
-        jTabbedPane2.setBackground(new java.awt.Color(0, 128, 97));
-        jTabbedPane2.setName("Tables"); // NOI18N
+        DetailsPane.setBackground(new java.awt.Color(0, 128, 97));
+        DetailsPane.setFont(new java.awt.Font("Tahoma", 0, 16)); // NOI18N
+        DetailsPane.setMinimumSize(new java.awt.Dimension(70, 58));
+        DetailsPane.setName("Tables"); // NOI18N
 
-        jPanel3.setBackground(new java.awt.Color(0, 128, 97));
-        jPanel3.setForeground(new java.awt.Color(255, 255, 255));
+        ScheduleTab.setBackground(new java.awt.Color(0, 128, 97));
+        ScheduleTab.setForeground(new java.awt.Color(255, 255, 255));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+        label6.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        label6.setForeground(new java.awt.Color(204, 204, 204));
+        label6.setText("Current Schedule");
+
+        javax.swing.GroupLayout ScheduleTabLayout = new javax.swing.GroupLayout(ScheduleTab);
+        ScheduleTab.setLayout(ScheduleTabLayout);
+        ScheduleTabLayout.setHorizontalGroup(
+            ScheduleTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ScheduleTabLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(628, Short.MAX_VALUE))
+        );
+        ScheduleTabLayout.setVerticalGroup(
+            ScheduleTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ScheduleTabLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(646, Short.MAX_VALUE))
+        );
+
+        DetailsPane.addTab("Schedule", ScheduleTab);
+
+        EmployeesTab.setBackground(new java.awt.Color(0, 128, 97));
+
+        label1.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        label1.setForeground(new java.awt.Color(204, 204, 204));
+        label1.setText("Current Employees");
+
+        AddEmployees.setText("Add");
+        AddEmployees.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        AddEmployees.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AddEmployeesMouseClicked(evt);
             }
-        ));
-        jScrollPane1.setViewportView(jTable1);
-
-        jLabel1.setText("Choose Table to Show");
-
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Employees", "Trucks", "Storage Units", "Jobs" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        });
+        AddEmployees.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                AddEmployeesActionPerformed(evt);
             }
         });
 
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        DeleteEmployee.setText("Delete");
+        DeleteEmployee.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        DeleteEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DeleteEmployeeMouseClicked(evt);
+            }
+        });
+        DeleteEmployee.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteEmployeeActionPerformed(evt);
+            }
+        });
+
+        AddEmployeeLayer.setBackground(new java.awt.Color(0, 128, 97));
+
+        label11.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label11.setForeground(new java.awt.Color(204, 204, 204));
+        label11.setText("Date of Birth:");
+
+        CancelAddEmployee.setText("Cancel");
+        CancelAddEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CancelAddEmployeeMouseClicked(evt);
+            }
+        });
+
+        label8.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label8.setForeground(new java.awt.Color(204, 204, 204));
+        label8.setText("Please provide employee information");
+
+        label7.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label7.setForeground(new java.awt.Color(204, 204, 204));
+        label7.setText("Employee Id: ");
+
+        label10.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label10.setForeground(new java.awt.Color(204, 204, 204));
+        label10.setText("First Name:");
+
+        SubmitAddEmployee.setText("Submit");
+        SubmitAddEmployee.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SubmitAddEmployeeMouseClicked(evt);
+            }
+        });
+
+        label9.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label9.setForeground(new java.awt.Color(204, 204, 204));
+        label9.setText("Last Name:");
+
+        javax.swing.GroupLayout AddEmployeeLayerLayout = new javax.swing.GroupLayout(AddEmployeeLayer);
+        AddEmployeeLayer.setLayout(AddEmployeeLayerLayout);
+        AddEmployeeLayerLayout.setHorizontalGroup(
+            AddEmployeeLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddEmployeeLayerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator1)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 900, Short.MAX_VALUE)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 130, Short.MAX_VALUE)
-                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                .addGroup(AddEmployeeLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AddEmployeeLayerLayout.createSequentialGroup()
+                        .addGroup(AddEmployeeLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(AddEmployeeLayerLayout.createSequentialGroup()
+                                .addGroup(AddEmployeeLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(label10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(AddEmployeeLayerLayout.createSequentialGroup()
+                                        .addGroup(AddEmployeeLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(SubmitAddEmployee)
+                                            .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(CancelAddEmployee)))
+                                .addGap(0, 734, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(AddEmployeeLayerLayout.createSequentialGroup()
+                        .addGroup(AddEmployeeLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(AddEmployeeLayerLayout.createSequentialGroup()
+                                .addGroup(AddEmployeeLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(label11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(label9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(29, 29, 29)
+                                .addGroup(AddEmployeeLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(NewEmployeeDOB)
+                                    .addComponent(NewEmployeeLName, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                                    .addComponent(NewEmployeeFName)
+                                    .addComponent(newEmployeeId))))
+                        .addGap(0, 628, Short.MAX_VALUE))))
         );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
+        AddEmployeeLayerLayout.setVerticalGroup(
+            AddEmployeeLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddEmployeeLayerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(AddEmployeeLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(AddEmployeeLayerLayout.createSequentialGroup()
+                        .addGroup(AddEmployeeLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(AddEmployeeLayerLayout.createSequentialGroup()
+                                .addComponent(label8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(AddEmployeeLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(label7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(newEmployeeId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(27, 27, 27)
+                                .addComponent(NewEmployeeFName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(label10, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(22, 22, 22)
+                        .addComponent(label9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NewEmployeeLName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(AddEmployeeLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NewEmployeeDOB, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label11, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(AddEmployeeLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SubmitAddEmployee)
+                    .addComponent(CancelAddEmployee))
+                .addContainerGap(286, Short.MAX_VALUE))
+        );
+
+        ShowEmployeesLayer.setBackground(new java.awt.Color(0, 128, 97));
+
+        javax.swing.GroupLayout ShowEmployeesLayerLayout = new javax.swing.GroupLayout(ShowEmployeesLayer);
+        ShowEmployeesLayer.setLayout(ShowEmployeesLayerLayout);
+        ShowEmployeesLayerLayout.setHorizontalGroup(
+            ShowEmployeesLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 0, Short.MAX_VALUE)
+        );
+        ShowEmployeesLayerLayout.setVerticalGroup(
+            ShowEmployeesLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 583, Short.MAX_VALUE)
+        );
+
+        EmployeeTabLayer.setLayer(AddEmployeeLayer, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        EmployeeTabLayer.setLayer(ShowEmployeesLayer, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout EmployeeTabLayerLayout = new javax.swing.GroupLayout(EmployeeTabLayer);
+        EmployeeTabLayer.setLayout(EmployeeTabLayerLayout);
+        EmployeeTabLayerLayout.setHorizontalGroup(
+            EmployeeTabLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ShowEmployeesLayer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(EmployeeTabLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EmployeeTabLayerLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(AddEmployeeLayer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+        );
+        EmployeeTabLayerLayout.setVerticalGroup(
+            EmployeeTabLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ShowEmployeesLayer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(EmployeeTabLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(AddEmployeeLayer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout EmployeesTabLayout = new javax.swing.GroupLayout(EmployeesTab);
+        EmployeesTab.setLayout(EmployeesTabLayout);
+        EmployeesTabLayout.setHorizontalGroup(
+            EmployeesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EmployeesTabLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(EmployeesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(EmployeesTabLayout.createSequentialGroup()
+                        .addComponent(AddEmployees, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(DeleteEmployee, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(622, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, EmployeesTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(EmployeeTabLayer))
+        );
+        EmployeesTabLayout.setVerticalGroup(
+            EmployeesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(EmployeesTabLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(label1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(EmployeesTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(AddEmployees, javax.swing.GroupLayout.DEFAULT_SIZE, 35, Short.MAX_VALUE)
+                    .addComponent(DeleteEmployee, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(EmployeeTabLayer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(603, 603, 603))
+        );
+
+        label1.getAccessibleContext().setAccessibleName("Label1");
+
+        DetailsPane.addTab("Employees", EmployeesTab);
+
+        TrucksTab.setBackground(new java.awt.Color(0, 128, 97));
+
+        TruckTabLayer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TruckTabLayerMouseClicked(evt);
+            }
+        });
+
+        ShowTrucksLayer.setBackground(new java.awt.Color(0, 128, 97));
+
+        javax.swing.GroupLayout ShowTrucksLayerLayout = new javax.swing.GroupLayout(ShowTrucksLayer);
+        ShowTrucksLayer.setLayout(ShowTrucksLayerLayout);
+        ShowTrucksLayerLayout.setHorizontalGroup(
+            ShowTrucksLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 935, Short.MAX_VALUE)
+        );
+        ShowTrucksLayerLayout.setVerticalGroup(
+            ShowTrucksLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 588, Short.MAX_VALUE)
+        );
+
+        AddTruckLayer.setBackground(new java.awt.Color(0, 128, 97));
+
+        newTruckId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newTruckIdActionPerformed(evt);
+            }
+        });
+
+        label12.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label12.setForeground(new java.awt.Color(204, 204, 204));
+        label12.setText("Registration #:");
+
+        CancelAddTruck.setText("Cancel");
+        CancelAddTruck.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CancelAddTruckMouseClicked(evt);
+            }
+        });
+
+        label13.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label13.setForeground(new java.awt.Color(204, 204, 204));
+        label13.setText("Please provide truck information");
+
+        label14.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label14.setForeground(new java.awt.Color(204, 204, 204));
+        label14.setText("Truck Id: ");
+
+        label15.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label15.setForeground(new java.awt.Color(204, 204, 204));
+        label15.setText("Mileage:");
+
+        SubmitAddTruck.setText("Submit");
+        SubmitAddTruck.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SubmitAddTruckMouseClicked(evt);
+            }
+        });
+
+        label16.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label16.setForeground(new java.awt.Color(204, 204, 204));
+        label16.setText("Size:");
+
+        label31.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label31.setForeground(new java.awt.Color(204, 204, 204));
+        label31.setText("Service Date:");
+
+        javax.swing.GroupLayout AddTruckLayerLayout = new javax.swing.GroupLayout(AddTruckLayer);
+        AddTruckLayer.setLayout(AddTruckLayerLayout);
+        AddTruckLayerLayout.setHorizontalGroup(
+            AddTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddTruckLayerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(AddTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AddTruckLayerLayout.createSequentialGroup()
+                        .addGroup(AddTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(AddTruckLayerLayout.createSequentialGroup()
+                                .addComponent(label14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addGroup(AddTruckLayerLayout.createSequentialGroup()
+                                .addComponent(label15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addContainerGap())
+                    .addGroup(AddTruckLayerLayout.createSequentialGroup()
+                        .addGroup(AddTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(AddTruckLayerLayout.createSequentialGroup()
+                                .addGroup(AddTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(AddTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(AddTruckLayerLayout.createSequentialGroup()
+                                            .addGroup(AddTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(label12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addComponent(label16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                            .addGap(29, 29, 29))
+                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddTruckLayerLayout.createSequentialGroup()
+                                            .addComponent(SubmitAddTruck)
+                                            .addGap(18, 18, 18)))
+                                    .addGroup(AddTruckLayerLayout.createSequentialGroup()
+                                        .addComponent(label31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                                .addGroup(AddTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(NewTruckService, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CancelAddTruck)
+                                    .addGroup(AddTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(NewTruckSize)
+                                        .addComponent(NewTruckRegistration, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                                        .addComponent(NewTruckMileage)
+                                        .addComponent(newTruckId)))))
+                        .addGap(0, 638, Short.MAX_VALUE))))
+        );
+        AddTruckLayerLayout.setVerticalGroup(
+            AddTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddTruckLayerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(AddTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(AddTruckLayerLayout.createSequentialGroup()
+                        .addGroup(AddTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(AddTruckLayerLayout.createSequentialGroup()
+                                .addComponent(label13, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(AddTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(label14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(newTruckId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(27, 27, 27)
+                                .addComponent(NewTruckMileage, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(label15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(22, 22, 22)
+                        .addComponent(label16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NewTruckSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(AddTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NewTruckRegistration, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label12, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addGroup(AddTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NewTruckService, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(AddTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SubmitAddTruck)
+                    .addComponent(CancelAddTruck))
+                .addContainerGap(203, Short.MAX_VALUE))
+        );
+
+        label14.getAccessibleContext().setAccessibleName("Truck Id: ");
+
+        TruckTabLayer.setLayer(ShowTrucksLayer, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        TruckTabLayer.setLayer(AddTruckLayer, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout TruckTabLayerLayout = new javax.swing.GroupLayout(TruckTabLayer);
+        TruckTabLayer.setLayout(TruckTabLayerLayout);
+        TruckTabLayerLayout.setHorizontalGroup(
+            TruckTabLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ShowTrucksLayer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(TruckTabLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TruckTabLayerLayout.createSequentialGroup()
+                    .addComponent(AddTruckLayer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        TruckTabLayerLayout.setVerticalGroup(
+            TruckTabLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, TruckTabLayerLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ShowTrucksLayer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
+            .addGroup(TruckTabLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(TruckTabLayerLayout.createSequentialGroup()
+                    .addGap(25, 25, 25)
+                    .addComponent(AddTruckLayer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(42, Short.MAX_VALUE)))
+        );
+
+        label2.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        label2.setForeground(new java.awt.Color(204, 204, 204));
+        label2.setText("Current Trucks");
+
+        AddTruck.setText("Add");
+        AddTruck.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        AddTruck.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AddTruckMouseClicked(evt);
+            }
+        });
+        AddTruck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddTruckActionPerformed(evt);
+            }
+        });
+
+        DeleteTruck.setText("Delete");
+        DeleteTruck.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        DeleteTruck.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DeleteTruckMouseClicked(evt);
+            }
+        });
+        DeleteTruck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteTruckActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout TrucksTabLayout = new javax.swing.GroupLayout(TrucksTab);
+        TrucksTab.setLayout(TrucksTabLayout);
+        TrucksTabLayout.setHorizontalGroup(
+            TrucksTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TrucksTabLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(TrucksTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(TrucksTabLayout.createSequentialGroup()
+                        .addComponent(AddTruck, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(DeleteTruck, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(654, Short.MAX_VALUE))
+            .addGroup(TrucksTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(TrucksTabLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(TruckTabLayer)
+                    .addContainerGap()))
+        );
+        TrucksTabLayout.setVerticalGroup(
+            TrucksTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(TrucksTabLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(TrucksTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(AddTruck, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(DeleteTruck, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(601, Short.MAX_VALUE))
+            .addGroup(TrucksTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(TrucksTabLayout.createSequentialGroup()
+                    .addGap(0, 0, Short.MAX_VALUE)
+                    .addComponent(TruckTabLayer, javax.swing.GroupLayout.PREFERRED_SIZE, 507, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGap(0, 0, Short.MAX_VALUE)))
+        );
+
+        DetailsPane.addTab("Trucks", TrucksTab);
+
+        JobsTab.setBackground(new java.awt.Color(0, 128, 97));
+
+        label5.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        label5.setForeground(new java.awt.Color(204, 204, 204));
+        label5.setText("All Jobs");
+
+        AddJob.setText("Add");
+        AddJob.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        AddJob.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AddJobMouseClicked(evt);
+            }
+        });
+        AddJob.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddJobActionPerformed(evt);
+            }
+        });
+
+        DeleteJob.setText("Delete");
+        DeleteJob.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        DeleteJob.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DeleteJobMouseClicked(evt);
+            }
+        });
+        DeleteJob.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteJobActionPerformed(evt);
+            }
+        });
+
+        JobTabLayer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JobTabLayerMouseClicked(evt);
+            }
+        });
+
+        ShowJobsLayer.setBackground(new java.awt.Color(0, 128, 97));
+
+        javax.swing.GroupLayout ShowJobsLayerLayout = new javax.swing.GroupLayout(ShowJobsLayer);
+        ShowJobsLayer.setLayout(ShowJobsLayerLayout);
+        ShowJobsLayerLayout.setHorizontalGroup(
+            ShowJobsLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 942, Short.MAX_VALUE)
+        );
+        ShowJobsLayerLayout.setVerticalGroup(
+            ShowJobsLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 566, Short.MAX_VALUE)
+        );
+
+        AddJobLayer.setBackground(new java.awt.Color(0, 128, 97));
+
+        newJobId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newJobIdActionPerformed(evt);
+            }
+        });
+
+        label17.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label17.setForeground(new java.awt.Color(204, 204, 204));
+        label17.setText("Total Hours:");
+
+        CancelAddJob.setText("Cancel");
+        CancelAddJob.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CancelAddJobMouseClicked(evt);
+            }
+        });
+        CancelAddJob.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CancelAddJobActionPerformed(evt);
+            }
+        });
+
+        label18.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label18.setForeground(new java.awt.Color(204, 204, 204));
+        label18.setText("Please provide job information");
+
+        label19.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label19.setForeground(new java.awt.Color(204, 204, 204));
+        label19.setText("Job Id: ");
+
+        label20.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label20.setForeground(new java.awt.Color(204, 204, 204));
+        label20.setText("From Location:");
+
+        SubmitAddJob.setText("Submit");
+        SubmitAddJob.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SubmitAddJobMouseClicked(evt);
+            }
+        });
+
+        label21.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label21.setForeground(new java.awt.Color(204, 204, 204));
+        label21.setText("To Location:");
+
+        label22.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label22.setForeground(new java.awt.Color(204, 204, 204));
+        label22.setText("Estimated Cost: ");
+
+        label23.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label23.setForeground(new java.awt.Color(204, 204, 204));
+        label23.setText("Job Date: ");
+
+        label24.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label24.setForeground(new java.awt.Color(204, 204, 204));
+        label24.setText("Client ID: ");
+
+        label25.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label25.setForeground(new java.awt.Color(204, 204, 204));
+        label25.setText("Service: ");
+
+        javax.swing.GroupLayout AddJobLayerLayout = new javax.swing.GroupLayout(AddJobLayer);
+        AddJobLayer.setLayout(AddJobLayerLayout);
+        AddJobLayerLayout.setHorizontalGroup(
+            AddJobLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddJobLayerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(AddJobLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AddJobLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(AddJobLayerLayout.createSequentialGroup()
+                            .addGroup(AddJobLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(AddJobLayerLayout.createSequentialGroup()
+                                    .addGap(75, 75, 75)
+                                    .addComponent(SubmitAddJob))
+                                .addComponent(label25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(19, 19, 19)
+                            .addGroup(AddJobLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(CancelAddJob)
+                                .addComponent(NewJobService)))
+                        .addGroup(AddJobLayerLayout.createSequentialGroup()
+                            .addComponent(label23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(75, 75, 75)
+                            .addComponent(NewJobDate))
+                        .addGroup(AddJobLayerLayout.createSequentialGroup()
+                            .addGroup(AddJobLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(label17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(label22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGap(19, 19, 19)
+                            .addGroup(AddJobLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(NewJobFromLoc, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
+                                .addComponent(newJobId)
+                                .addComponent(NewJobToLoc)
+                                .addComponent(NewJobHours)
+                                .addComponent(NewJobCost)))
+                        .addComponent(label19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(label20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(AddJobLayerLayout.createSequentialGroup()
+                            .addComponent(label24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(77, 77, 77)
+                            .addComponent(NewJobClientId, javax.swing.GroupLayout.PREFERRED_SIZE, 216, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(label18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 906, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(24, Short.MAX_VALUE))
+        );
+        AddJobLayerLayout.setVerticalGroup(
+            AddJobLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddJobLayerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(label18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(AddJobLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddJobLayerLayout.createSequentialGroup()
+                        .addGroup(AddJobLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddJobLayerLayout.createSequentialGroup()
+                                .addGroup(AddJobLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(label19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(newJobId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(27, 27, 27)
+                                .addComponent(NewJobFromLoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(label20, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(22, 22, 22)
+                        .addComponent(label21, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NewJobToLoc, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(AddJobLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NewJobHours, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label17, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(21, 21, 21)
+                .addGroup(AddJobLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label22, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NewJobCost, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(20, 20, 20)
+                .addGroup(AddJobLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label23, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NewJobDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(22, 22, 22)
+                .addGroup(AddJobLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label24, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NewJobClientId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(AddJobLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label25, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(NewJobService, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(AddJobLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SubmitAddJob)
+                    .addComponent(CancelAddJob))
+                .addContainerGap(81, Short.MAX_VALUE))
+        );
+
+        JobTabLayer.setLayer(ShowJobsLayer, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        JobTabLayer.setLayer(AddJobLayer, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout JobTabLayerLayout = new javax.swing.GroupLayout(JobTabLayer);
+        JobTabLayer.setLayout(JobTabLayerLayout);
+        JobTabLayerLayout.setHorizontalGroup(
+            JobTabLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ShowJobsLayer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(JobTabLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(JobTabLayerLayout.createSequentialGroup()
+                    .addComponent(AddJobLayer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        JobTabLayerLayout.setVerticalGroup(
+            JobTabLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JobTabLayerLayout.createSequentialGroup()
+                .addComponent(ShowJobsLayer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(JobTabLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JobTabLayerLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(AddJobLayer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+        );
+
+        javax.swing.GroupLayout JobsTabLayout = new javax.swing.GroupLayout(JobsTab);
+        JobsTab.setLayout(JobsTabLayout);
+        JobsTabLayout.setHorizontalGroup(
+            JobsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JobsTabLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(JobsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(JobsTabLayout.createSequentialGroup()
+                        .addComponent(AddJob, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(DeleteJob, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(661, Short.MAX_VALUE))
+            .addGroup(JobsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(JobsTabLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(JobTabLayer)
+                    .addContainerGap()))
+        );
+        JobsTabLayout.setVerticalGroup(
+            JobsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(JobsTabLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 608, Short.MAX_VALUE)
+                .addGroup(JobsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(AddJob, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(DeleteJob, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(601, Short.MAX_VALUE))
+            .addGroup(JobsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JobsTabLayout.createSequentialGroup()
+                    .addContainerGap(134, Short.MAX_VALUE)
+                    .addComponent(JobTabLayer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap()))
+        );
+
+        DetailsPane.addTab("Jobs", JobsTab);
+
+        ClientsTab.setBackground(new java.awt.Color(0, 128, 97));
+
+        label4.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        label4.setForeground(new java.awt.Color(204, 204, 204));
+        label4.setText("All Clients");
+
+        AddClient.setText("Add");
+        AddClient.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        AddClient.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AddClientMouseClicked(evt);
+            }
+        });
+        AddClient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddClientActionPerformed(evt);
+            }
+        });
+
+        DeleteClient.setText("Delete");
+        DeleteClient.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        DeleteClient.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DeleteClientMouseClicked(evt);
+            }
+        });
+        DeleteClient.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteClientActionPerformed(evt);
+            }
+        });
+
+        AddClientLayer.setBackground(new java.awt.Color(0, 128, 97));
+
+        label26.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label26.setForeground(new java.awt.Color(204, 204, 204));
+        label26.setText("Phone #");
+
+        CancelAddClient.setText("Cancel");
+        CancelAddClient.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CancelAddClientMouseClicked(evt);
+            }
+        });
+
+        label27.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label27.setForeground(new java.awt.Color(204, 204, 204));
+        label27.setText("Please provide client information");
+
+        label28.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label28.setForeground(new java.awt.Color(204, 204, 204));
+        label28.setText("Client Id: ");
+
+        label29.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label29.setForeground(new java.awt.Color(204, 204, 204));
+        label29.setText("First Name:");
+
+        SubmitAddClient.setText("Submit");
+        SubmitAddClient.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SubmitAddClientMouseClicked(evt);
+            }
+        });
+
+        label30.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label30.setForeground(new java.awt.Color(204, 204, 204));
+        label30.setText("Last Name:");
+
+        javax.swing.GroupLayout AddClientLayerLayout = new javax.swing.GroupLayout(AddClientLayer);
+        AddClientLayer.setLayout(AddClientLayerLayout);
+        AddClientLayerLayout.setHorizontalGroup(
+            AddClientLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddClientLayerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(AddClientLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AddClientLayerLayout.createSequentialGroup()
+                        .addGroup(AddClientLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator3, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(AddClientLayerLayout.createSequentialGroup()
+                                .addGroup(AddClientLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(label29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGroup(AddClientLayerLayout.createSequentialGroup()
+                                        .addGroup(AddClientLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                            .addComponent(SubmitAddClient)
+                                            .addComponent(label28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addGap(18, 18, 18)
+                                        .addComponent(CancelAddClient)))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(AddClientLayerLayout.createSequentialGroup()
+                        .addGroup(AddClientLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(AddClientLayerLayout.createSequentialGroup()
+                                .addGroup(AddClientLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(label26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(label30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(29, 29, 29)
+                                .addGroup(AddClientLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(NewClientPhone)
+                                    .addComponent(NewClientLName, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
+                                    .addComponent(NewClientFName)
+                                    .addComponent(newClientId))))
+                        .addGap(0, 658, Short.MAX_VALUE))))
+        );
+        AddClientLayerLayout.setVerticalGroup(
+            AddClientLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddClientLayerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(AddClientLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(AddClientLayerLayout.createSequentialGroup()
+                        .addGroup(AddClientLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(AddClientLayerLayout.createSequentialGroup()
+                                .addComponent(label27, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(AddClientLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(label28, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(newClientId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(27, 27, 27)
+                                .addComponent(NewClientFName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(label29, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(22, 22, 22)
+                        .addComponent(label30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NewClientLName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(AddClientLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NewClientPhone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label26, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(AddClientLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SubmitAddClient)
+                    .addComponent(CancelAddClient))
+                .addContainerGap(208, Short.MAX_VALUE))
+        );
+
+        ShowClientsLayer.setBackground(new java.awt.Color(0, 128, 97));
+
+        javax.swing.GroupLayout ShowClientsLayerLayout = new javax.swing.GroupLayout(ShowClientsLayer);
+        ShowClientsLayer.setLayout(ShowClientsLayerLayout);
+        ShowClientsLayerLayout.setHorizontalGroup(
+            ShowClientsLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 944, Short.MAX_VALUE)
+        );
+        ShowClientsLayerLayout.setVerticalGroup(
+            ShowClientsLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 505, Short.MAX_VALUE)
+        );
+
+        ClientTabLayer.setLayer(AddClientLayer, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        ClientTabLayer.setLayer(ShowClientsLayer, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout ClientTabLayerLayout = new javax.swing.GroupLayout(ClientTabLayer);
+        ClientTabLayer.setLayout(ClientTabLayerLayout);
+        ClientTabLayerLayout.setHorizontalGroup(
+            ClientTabLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ShowClientsLayer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(ClientTabLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(AddClientLayer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        ClientTabLayerLayout.setVerticalGroup(
+            ClientTabLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(ShowClientsLayer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(ClientTabLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addComponent(AddClientLayer, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        javax.swing.GroupLayout ClientsTabLayout = new javax.swing.GroupLayout(ClientsTab);
+        ClientsTab.setLayout(ClientsTabLayout);
+        ClientsTabLayout.setHorizontalGroup(
+            ClientsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ClientsTabLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(ClientsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(ClientsTabLayout.createSequentialGroup()
+                        .addComponent(AddClient, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(DeleteClient, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(654, Short.MAX_VALUE))
+            .addGroup(ClientsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ClientsTabLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(ClientTabLayer)
+                    .addGap(3, 3, 3)))
+        );
+        ClientsTabLayout.setVerticalGroup(
+            ClientsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ClientsTabLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(ClientsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(AddClient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(DeleteClient, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(601, Short.MAX_VALUE))
+            .addGroup(ClientsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(ClientsTabLayout.createSequentialGroup()
+                    .addGap(149, 149, 149)
+                    .addComponent(ClientTabLayer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(72, Short.MAX_VALUE)))
+        );
+
+        DetailsPane.addTab("Clients", ClientsTab);
+
+        StorageTab.setBackground(new java.awt.Color(0, 128, 97));
+
+        label3.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        label3.setForeground(new java.awt.Color(204, 204, 204));
+        label3.setText("Current Storage Units");
+
+        AddStorage.setText("Add");
+        AddStorage.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        AddStorage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AddStorageMouseClicked(evt);
+            }
+        });
+        AddStorage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddStorageActionPerformed(evt);
+            }
+        });
+
+        DeleteStorage.setText("Delete");
+        DeleteStorage.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        DeleteStorage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DeleteStorageMouseClicked(evt);
+            }
+        });
+        DeleteStorage.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteStorageActionPerformed(evt);
+            }
+        });
+
+        StorageTabLayer.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                StorageTabLayerMouseClicked(evt);
+            }
+        });
+
+        AddStorageLayer.setBackground(new java.awt.Color(0, 128, 97));
+
+        newUnitNum.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newUnitNumActionPerformed(evt);
+            }
+        });
+
+        label32.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label32.setForeground(new java.awt.Color(204, 204, 204));
+        label32.setText("Size:");
+
+        CancelAddStorage.setText("Cancel");
+        CancelAddStorage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CancelAddStorageMouseClicked(evt);
+            }
+        });
+
+        label33.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label33.setForeground(new java.awt.Color(204, 204, 204));
+        label33.setText("Please provide storage information");
+
+        label34.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label34.setForeground(new java.awt.Color(204, 204, 204));
+        label34.setText("Unit Number ");
+
+        label35.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label35.setForeground(new java.awt.Color(204, 204, 204));
+        label35.setText("Location:");
+
+        SubmitAddStorage.setText("Submit");
+        SubmitAddStorage.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SubmitAddStorageMouseClicked(evt);
+            }
+        });
+
+        label36.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label36.setForeground(new java.awt.Color(204, 204, 204));
+        label36.setText("Rate:");
+
+        label37.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label37.setForeground(new java.awt.Color(204, 204, 204));
+        label37.setText("Client Id:");
+
+        javax.swing.GroupLayout AddStorageLayerLayout = new javax.swing.GroupLayout(AddStorageLayer);
+        AddStorageLayer.setLayout(AddStorageLayerLayout);
+        AddStorageLayerLayout.setHorizontalGroup(
+            AddStorageLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddStorageLayerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(AddStorageLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AddStorageLayerLayout.createSequentialGroup()
+                        .addGroup(AddStorageLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator5, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(AddStorageLayerLayout.createSequentialGroup()
+                                .addGroup(AddStorageLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(label34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(label35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 0, Short.MAX_VALUE)))
+                        .addContainerGap())
+                    .addGroup(AddStorageLayerLayout.createSequentialGroup()
+                        .addGroup(AddStorageLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(AddStorageLayerLayout.createSequentialGroup()
+                                .addGroup(AddStorageLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(AddStorageLayerLayout.createSequentialGroup()
+                                        .addGroup(AddStorageLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addComponent(label32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(label36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                    .addGroup(AddStorageLayerLayout.createSequentialGroup()
+                                        .addGroup(AddStorageLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(AddStorageLayerLayout.createSequentialGroup()
+                                                .addComponent(label37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                                .addGap(0, 0, Short.MAX_VALUE))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AddStorageLayerLayout.createSequentialGroup()
+                                                .addGap(0, 0, Short.MAX_VALUE)
+                                                .addComponent(SubmitAddStorage)))
+                                        .addGap(18, 18, 18)))
+                                .addGroup(AddStorageLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(NewStorageClient, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CancelAddStorage)
+                                    .addGroup(AddStorageLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(NewStorageRate)
+                                        .addComponent(NewStorageSize, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
+                                        .addComponent(NewStorageLoc)
+                                        .addComponent(newUnitNum)))))
+                        .addGap(0, 599, Short.MAX_VALUE))))
+        );
+        AddStorageLayerLayout.setVerticalGroup(
+            AddStorageLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddStorageLayerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(AddStorageLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(AddStorageLayerLayout.createSequentialGroup()
+                        .addGroup(AddStorageLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(AddStorageLayerLayout.createSequentialGroup()
+                                .addComponent(label33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addGroup(AddStorageLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(label34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(newUnitNum, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(27, 27, 27)
+                                .addComponent(NewStorageLoc, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(label35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(22, 22, 22)
+                        .addComponent(label36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(NewStorageRate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(26, 26, 26)
+                .addGroup(AddStorageLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NewStorageSize, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label32, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(19, 19, 19)
+                .addGroup(AddStorageLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(NewStorageClient, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23)
+                .addGroup(AddStorageLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SubmitAddStorage)
+                    .addComponent(CancelAddStorage))
+                .addContainerGap(203, Short.MAX_VALUE))
+        );
+
+        StorageTabLayer.setLayer(AddStorageLayer, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout StorageTabLayerLayout = new javax.swing.GroupLayout(StorageTabLayer);
+        StorageTabLayer.setLayout(StorageTabLayerLayout);
+        StorageTabLayerLayout.setHorizontalGroup(
+            StorageTabLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StorageTabLayerLayout.createSequentialGroup()
+                .addComponent(AddStorageLayer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
-
-        jTabbedPane2.addTab("General", jPanel3);
-
-        jPanel4.setBackground(new java.awt.Color(0, 128, 97));
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 924, Short.MAX_VALUE)
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 722, Short.MAX_VALUE)
+        StorageTabLayerLayout.setVerticalGroup(
+            StorageTabLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(StorageTabLayerLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addComponent(AddStorageLayer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jTabbedPane2.addTab("tab2", jPanel4);
+        ShowStorageLayer.setBackground(new java.awt.Color(0, 128, 97));
+
+        javax.swing.GroupLayout ShowStorageLayerLayout = new javax.swing.GroupLayout(ShowStorageLayer);
+        ShowStorageLayer.setLayout(ShowStorageLayerLayout);
+        ShowStorageLayerLayout.setHorizontalGroup(
+            ShowStorageLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 935, Short.MAX_VALUE)
+        );
+        ShowStorageLayerLayout.setVerticalGroup(
+            ShowStorageLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 588, Short.MAX_VALUE)
+        );
+
+        javax.swing.GroupLayout StorageTabLayout = new javax.swing.GroupLayout(StorageTab);
+        StorageTab.setLayout(StorageTabLayout);
+        StorageTabLayout.setHorizontalGroup(
+            StorageTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(StorageTabLayout.createSequentialGroup()
+                .addGap(32, 32, 32)
+                .addGroup(StorageTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(StorageTabLayout.createSequentialGroup()
+                        .addComponent(AddStorage, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(DeleteStorage, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StorageTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ShowStorageLayer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+            .addGroup(StorageTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(StorageTabLayout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(StorageTabLayer)
+                    .addContainerGap()))
+        );
+        StorageTabLayout.setVerticalGroup(
+            StorageTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(StorageTabLayout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(StorageTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(AddStorage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(DeleteStorage, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addComponent(ShowStorageLayer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(StorageTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(StorageTabLayout.createSequentialGroup()
+                    .addGap(109, 109, 109)
+                    .addComponent(StorageTabLayer, javax.swing.GroupLayout.PREFERRED_SIZE, 507, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(110, Short.MAX_VALUE)))
+        );
+
+        DetailsPane.addTab("Storage Units", StorageTab);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(NavigationPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jTabbedPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(DetailsPane, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                         .addContainerGap())))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(NavigationPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane2))
+                .addGap(0, 0, 0)
+                .addComponent(DetailsPane, javax.swing.GroupLayout.PREFERRED_SIZE, 760, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        jTabbedPane2.getAccessibleContext().setAccessibleName("Tables");
+        DetailsPane.getAccessibleContext().setAccessibleName("Tables");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -194,9 +1509,241 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_jTextField1ActionPerformed
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void EmployeesButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmployeesButtonActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_EmployeesButtonActionPerformed
+
+    private void JobsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JobsButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JobsButtonActionPerformed
+
+    private void ScheduleButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ScheduleButtonMouseClicked
+                // TODO add your handling code here:
+                DetailsPane.setSelectedComponent(ScheduleTab);
+    }//GEN-LAST:event_ScheduleButtonMouseClicked
+
+    private void ScheduleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ScheduleButtonActionPerformed
+        // TODO add your handling code here:
+        
+    }//GEN-LAST:event_ScheduleButtonActionPerformed
+
+    private void EmployeesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EmployeesButtonMouseClicked
+        // TODO add your handling code here:
+        DetailsPane.setSelectedComponent(EmployeesTab);
+        AddEmployeeLayer.setVisible(false);
+        ShowEmployeesLayer.setVisible(true);
+    }//GEN-LAST:event_EmployeesButtonMouseClicked
+
+    private void TrucksButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TrucksButtonMouseClicked
+        // TODO add your handling code here:
+        DetailsPane.setSelectedComponent(TrucksTab);
+        AddTruckLayer.setVisible(false);
+        ShowTrucksLayer.setVisible(true);
+    }//GEN-LAST:event_TrucksButtonMouseClicked
+
+    private void JobsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JobsButtonMouseClicked
+        // TODO add your handling code here:
+        DetailsPane.setSelectedComponent(JobsTab);
+        AddJobLayer.setVisible(false);
+        ShowJobsLayer.setVisible(true);
+    }//GEN-LAST:event_JobsButtonMouseClicked
+
+    private void ClientsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClientsButtonMouseClicked
+        // TODO add your handling code here:
+        DetailsPane.setSelectedComponent(ClientsTab);
+    }//GEN-LAST:event_ClientsButtonMouseClicked
+
+    private void StorageButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StorageButtonMouseClicked
+        // TODO add your handling code here:
+        DetailsPane.setSelectedComponent(StorageTab);
+    }//GEN-LAST:event_StorageButtonMouseClicked
+
+    private void AddEmployeesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddEmployeesMouseClicked
+        // TODO add your handling code here:
+        AddEmployeeLayer.setVisible(true);
+        ShowEmployeesLayer.setVisible(false);
+        
+    }//GEN-LAST:event_AddEmployeesMouseClicked
+
+    private void AddEmployeesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddEmployeesActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AddEmployeesActionPerformed
+
+    private void DeleteEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteEmployeeMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DeleteEmployeeMouseClicked
+
+    private void DeleteEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteEmployeeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DeleteEmployeeActionPerformed
+
+    private void AddTruckMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddTruckMouseClicked
+        // TODO add your handling code here:
+        AddTruckLayer.setVisible(true);
+        ShowTrucksLayer.setVisible(false);
+    }//GEN-LAST:event_AddTruckMouseClicked
+
+    private void AddTruckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddTruckActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AddTruckActionPerformed
+
+    private void DeleteTruckMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteTruckMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DeleteTruckMouseClicked
+
+    private void DeleteTruckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteTruckActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DeleteTruckActionPerformed
+
+    private void AddJobMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddJobMouseClicked
+        // TODO add your handling code here:
+        AddJobLayer.setVisible(true);
+        ShowJobsLayer.setVisible(false);
+    }//GEN-LAST:event_AddJobMouseClicked
+
+    private void AddJobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddJobActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AddJobActionPerformed
+
+    private void DeleteJobMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteJobMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DeleteJobMouseClicked
+
+    private void DeleteJobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteJobActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DeleteJobActionPerformed
+
+    private void AddClientMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddClientMouseClicked
+        // TODO add your handling code here:
+        AddClientLayer.setVisible(true);
+        ShowClientsLayer.setVisible(false);
+    }//GEN-LAST:event_AddClientMouseClicked
+
+    private void AddClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddClientActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AddClientActionPerformed
+
+    private void DeleteClientMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteClientMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DeleteClientMouseClicked
+
+    private void DeleteClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteClientActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DeleteClientActionPerformed
+
+    private void AddStorageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddStorageMouseClicked
+        // TODO add your handling code here:
+        AddStorageLayer.setVisible(true);
+        ShowStorageLayer.setVisible(false);
+    }//GEN-LAST:event_AddStorageMouseClicked
+
+    private void AddStorageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddStorageActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AddStorageActionPerformed
+
+    private void DeleteStorageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteStorageMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DeleteStorageMouseClicked
+
+    private void DeleteStorageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteStorageActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DeleteStorageActionPerformed
+
+    private void CancelAddEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelAddEmployeeMouseClicked
+        // TODO add your handling code here:
+        AddEmployeeLayer.setVisible(false);
+        ShowEmployeesLayer.setVisible(true);
+    }//GEN-LAST:event_CancelAddEmployeeMouseClicked
+
+    private void SubmitAddEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitAddEmployeeMouseClicked
+        // TODO add your handling code here:
+        AddEmployeeLayer.setVisible(false);
+        ShowEmployeesLayer.setVisible(true);
+    }//GEN-LAST:event_SubmitAddEmployeeMouseClicked
+
+    private void CancelAddTruckMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelAddTruckMouseClicked
+        // TODO add your handling code here:
+        AddTruckLayer.setVisible(false);
+        ShowTrucksLayer.setVisible(true);
+    }//GEN-LAST:event_CancelAddTruckMouseClicked
+
+    private void SubmitAddTruckMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitAddTruckMouseClicked
+        // TODO add your handling code here:
+        AddTruckLayer.setVisible(false);
+        ShowTrucksLayer.setVisible(true);
+    }//GEN-LAST:event_SubmitAddTruckMouseClicked
+
+    private void TruckTabLayerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TruckTabLayerMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TruckTabLayerMouseClicked
+
+    private void newTruckIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newTruckIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newTruckIdActionPerformed
+
+    private void newJobIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newJobIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newJobIdActionPerformed
+
+    private void CancelAddJobMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelAddJobMouseClicked
+        // TODO add your handling code here:
+        AddJobLayer.setVisible(false);
+        ShowJobsLayer.setVisible(true);
+    }//GEN-LAST:event_CancelAddJobMouseClicked
+
+    private void SubmitAddJobMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitAddJobMouseClicked
+        // TODO add your handling code here:
+        AddJobLayer.setVisible(false);
+        ShowJobsLayer.setVisible(true);
+    }//GEN-LAST:event_SubmitAddJobMouseClicked
+
+    private void JobTabLayerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JobTabLayerMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_JobTabLayerMouseClicked
+
+    private void TrucksButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrucksButtonActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_TrucksButtonActionPerformed
+
+    private void CancelAddJobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelAddJobActionPerformed
+        // TODO add your handling code here:
+        AddJobLayer.setVisible(false);
+        ShowJobsLayer.setVisible(true);
+    }//GEN-LAST:event_CancelAddJobActionPerformed
+
+    private void CancelAddClientMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelAddClientMouseClicked
+        // TODO add your handling code here:
+        AddClientLayer.setVisible(false);
+        ShowClientsLayer.setVisible(true);
+    }//GEN-LAST:event_CancelAddClientMouseClicked
+
+    private void SubmitAddClientMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitAddClientMouseClicked
+        // TODO add your handling code here:
+        AddClientLayer.setVisible(false);
+        ShowClientsLayer.setVisible(true);
+    }//GEN-LAST:event_SubmitAddClientMouseClicked
+
+    private void newUnitNumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newUnitNumActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newUnitNumActionPerformed
+
+    private void CancelAddStorageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelAddStorageMouseClicked
+        // TODO add your handling code here:
+        AddStorageLayer.setVisible(false);
+        ShowStorageLayer.setVisible(true);
+    }//GEN-LAST:event_CancelAddStorageMouseClicked
+
+    private void SubmitAddStorageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitAddStorageMouseClicked
+        // TODO add your handling code here:
+        AddStorageLayer.setVisible(false);
+        ShowStorageLayer.setVisible(true);
+    }//GEN-LAST:event_SubmitAddStorageMouseClicked
+
+    private void StorageTabLayerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StorageTabLayerMouseClicked
+        // TODO add your handling code here:
+        AddStorageLayer.setVisible(false);
+        ShowStorageLayer.setVisible(true);
+    }//GEN-LAST:event_StorageTabLayerMouseClicked
 
     /**
      * @param args the command line arguments
@@ -239,16 +1786,124 @@ public class Home extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JPanel jPanel1;
+    private javax.swing.JButton AddClient;
+    private javax.swing.JPanel AddClientLayer;
+    private javax.swing.JPanel AddEmployeeLayer;
+    private javax.swing.JButton AddEmployees;
+    private javax.swing.JButton AddJob;
+    private javax.swing.JPanel AddJobLayer;
+    private javax.swing.JButton AddStorage;
+    private javax.swing.JPanel AddStorageLayer;
+    private javax.swing.JButton AddTruck;
+    private javax.swing.JPanel AddTruckLayer;
+    private javax.swing.JButton CancelAddClient;
+    private javax.swing.JButton CancelAddEmployee;
+    private javax.swing.JButton CancelAddJob;
+    private javax.swing.JButton CancelAddStorage;
+    private javax.swing.JButton CancelAddTruck;
+    private javax.swing.JLayeredPane ClientTabLayer;
+    private javax.swing.JButton ClientsButton;
+    private javax.swing.JPanel ClientsTab;
+    private javax.swing.JButton DeleteClient;
+    private javax.swing.JButton DeleteEmployee;
+    private javax.swing.JButton DeleteJob;
+    private javax.swing.JButton DeleteStorage;
+    private javax.swing.JButton DeleteTruck;
+    private javax.swing.JTabbedPane DetailsPane;
+    private javax.swing.JLayeredPane EmployeeTabLayer;
+    private javax.swing.JButton EmployeesButton;
+    private javax.swing.JPanel EmployeesTab;
+    private javax.swing.JLayeredPane JobTabLayer;
+    private javax.swing.JButton JobsButton;
+    private javax.swing.JPanel JobsTab;
+    private javax.swing.JPanel NavigationPanel;
+    private javax.swing.JTextField NewClientFName;
+    private javax.swing.JTextField NewClientLName;
+    private javax.swing.JTextField NewClientPhone;
+    private javax.swing.JTextField NewEmployeeDOB;
+    private javax.swing.JTextField NewEmployeeFName;
+    private javax.swing.JTextField NewEmployeeLName;
+    private javax.swing.JTextField NewJobClientId;
+    private javax.swing.JTextField NewJobCost;
+    private javax.swing.JTextField NewJobDate;
+    private javax.swing.JTextField NewJobFromLoc;
+    private javax.swing.JTextField NewJobHours;
+    private javax.swing.JTextField NewJobService;
+    private javax.swing.JTextField NewJobToLoc;
+    private javax.swing.JTextField NewStorageClient;
+    private javax.swing.JTextField NewStorageLoc;
+    private javax.swing.JTextField NewStorageRate;
+    private javax.swing.JTextField NewStorageSize;
+    private javax.swing.JTextField NewTruckMileage;
+    private javax.swing.JTextField NewTruckRegistration;
+    private javax.swing.JTextField NewTruckService;
+    private javax.swing.JTextField NewTruckSize;
+    private javax.swing.JButton ScheduleButton;
+    private javax.swing.JPanel ScheduleTab;
+    private javax.swing.JPanel ShowClientsLayer;
+    private javax.swing.JPanel ShowEmployeesLayer;
+    private javax.swing.JPanel ShowJobsLayer;
+    private javax.swing.JPanel ShowStorageLayer;
+    private javax.swing.JPanel ShowTrucksLayer;
+    private javax.swing.JButton StorageButton;
+    private javax.swing.JPanel StorageTab;
+    private javax.swing.JLayeredPane StorageTabLayer;
+    private javax.swing.JButton SubmitAddClient;
+    private javax.swing.JButton SubmitAddEmployee;
+    private javax.swing.JButton SubmitAddJob;
+    private javax.swing.JButton SubmitAddStorage;
+    private javax.swing.JButton SubmitAddTruck;
+    private javax.swing.JLayeredPane TruckTabLayer;
+    private javax.swing.JButton TrucksButton;
+    private javax.swing.JPanel TrucksTab;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JSeparator jSeparator5;
     private javax.swing.JTextField jTextField1;
+    private java.awt.Label label1;
+    private java.awt.Label label10;
+    private java.awt.Label label11;
+    private java.awt.Label label12;
+    private java.awt.Label label13;
+    private java.awt.Label label14;
+    private java.awt.Label label15;
+    private java.awt.Label label16;
+    private java.awt.Label label17;
+    private java.awt.Label label18;
+    private java.awt.Label label19;
+    private java.awt.Label label2;
+    private java.awt.Label label20;
+    private java.awt.Label label21;
+    private java.awt.Label label22;
+    private java.awt.Label label23;
+    private java.awt.Label label24;
+    private java.awt.Label label25;
+    private java.awt.Label label26;
+    private java.awt.Label label27;
+    private java.awt.Label label28;
+    private java.awt.Label label29;
+    private java.awt.Label label3;
+    private java.awt.Label label30;
+    private java.awt.Label label31;
+    private java.awt.Label label32;
+    private java.awt.Label label33;
+    private java.awt.Label label34;
+    private java.awt.Label label35;
+    private java.awt.Label label36;
+    private java.awt.Label label37;
+    private java.awt.Label label4;
+    private java.awt.Label label5;
+    private java.awt.Label label6;
+    private java.awt.Label label7;
+    private java.awt.Label label8;
+    private java.awt.Label label9;
+    private javax.swing.JTextField newClientId;
+    private javax.swing.JTextField newEmployeeId;
+    private javax.swing.JTextField newJobId;
+    private javax.swing.JTextField newTruckId;
+    private javax.swing.JTextField newUnitNum;
     // End of variables declaration//GEN-END:variables
 }
