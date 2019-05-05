@@ -63,7 +63,6 @@ public class Home extends javax.swing.JFrame {
         ShowEmployeesLayer = new javax.swing.JPanel();
         TrucksTab = new javax.swing.JPanel();
         TruckTabLayer = new javax.swing.JLayeredPane();
-        ShowTrucksLayer = new javax.swing.JPanel();
         AddTruckLayer = new javax.swing.JPanel();
         newTruckId = new javax.swing.JTextField();
         label12 = new java.awt.Label();
@@ -79,6 +78,7 @@ public class Home extends javax.swing.JFrame {
         jSeparator2 = new javax.swing.JSeparator();
         label31 = new java.awt.Label();
         NewTruckService = new javax.swing.JTextField();
+        ShowTrucksLayer = new javax.swing.JPanel();
         label2 = new java.awt.Label();
         AddTruck = new javax.swing.JButton();
         DeleteTruck = new javax.swing.JButton();
@@ -531,19 +531,6 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        ShowTrucksLayer.setBackground(new java.awt.Color(0, 128, 97));
-
-        javax.swing.GroupLayout ShowTrucksLayerLayout = new javax.swing.GroupLayout(ShowTrucksLayer);
-        ShowTrucksLayer.setLayout(ShowTrucksLayerLayout);
-        ShowTrucksLayerLayout.setHorizontalGroup(
-            ShowTrucksLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 935, Short.MAX_VALUE)
-        );
-        ShowTrucksLayerLayout.setVerticalGroup(
-            ShowTrucksLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 588, Short.MAX_VALUE)
-        );
-
         AddTruckLayer.setBackground(new java.awt.Color(0, 128, 97));
 
         newTruckId.addActionListener(new java.awt.event.ActionListener() {
@@ -599,13 +586,12 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(AddTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(AddTruckLayerLayout.createSequentialGroup()
                         .addGroup(AddTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(AddTruckLayerLayout.createSequentialGroup()
-                                .addComponent(label14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addGroup(AddTruckLayerLayout.createSequentialGroup()
-                                .addComponent(label15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING))
+                                .addGroup(AddTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(label14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(label15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(0, 813, Short.MAX_VALUE)))
                         .addContainerGap())
                     .addGroup(AddTruckLayerLayout.createSequentialGroup()
                         .addGroup(AddTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -670,10 +656,21 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(203, Short.MAX_VALUE))
         );
 
-        label14.getAccessibleContext().setAccessibleName("Truck Id: ");
+        ShowTrucksLayer.setBackground(new java.awt.Color(0, 128, 97));
 
-        TruckTabLayer.setLayer(ShowTrucksLayer, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        javax.swing.GroupLayout ShowTrucksLayerLayout = new javax.swing.GroupLayout(ShowTrucksLayer);
+        ShowTrucksLayer.setLayout(ShowTrucksLayerLayout);
+        ShowTrucksLayerLayout.setHorizontalGroup(
+            ShowTrucksLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 935, Short.MAX_VALUE)
+        );
+        ShowTrucksLayerLayout.setVerticalGroup(
+            ShowTrucksLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 588, Short.MAX_VALUE)
+        );
+
         TruckTabLayer.setLayer(AddTruckLayer, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        TruckTabLayer.setLayer(ShowTrucksLayer, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout TruckTabLayerLayout = new javax.swing.GroupLayout(TruckTabLayer);
         TruckTabLayer.setLayout(TruckTabLayerLayout);
