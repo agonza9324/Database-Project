@@ -145,9 +145,6 @@ public class Home extends javax.swing.JFrame {
         AddStorage = new javax.swing.JButton();
         DeleteStorage = new javax.swing.JButton();
         StorageTabLayer = new javax.swing.JLayeredPane();
-        ShowStorageLayer = new javax.swing.JPanel();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        jTable6 = new javax.swing.JTable();
         AddStorageLayer = new javax.swing.JPanel();
         newUnitNum = new javax.swing.JTextField();
         label32 = new java.awt.Label();
@@ -163,6 +160,9 @@ public class Home extends javax.swing.JFrame {
         jSeparator5 = new javax.swing.JSeparator();
         label37 = new java.awt.Label();
         NewStorageClient = new javax.swing.JTextField();
+        ShowStorageLayer = new javax.swing.JPanel();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTable6 = new javax.swing.JTable();
         JobEmpsTab = new javax.swing.JPanel();
         label38 = new java.awt.Label();
         AddJobEmp = new javax.swing.JButton();
@@ -181,6 +181,22 @@ public class Home extends javax.swing.JFrame {
         NewJobEmpEmpId = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
         JobTrucksTab = new javax.swing.JPanel();
+        label39 = new java.awt.Label();
+        AddJobTruck = new javax.swing.JButton();
+        DeleteJobTruck = new javax.swing.JButton();
+        jLayeredPane1 = new javax.swing.JLayeredPane();
+        ShowJobTrucksLayer = new javax.swing.JPanel();
+        jScrollPane8 = new javax.swing.JScrollPane();
+        jTable8 = new javax.swing.JTable();
+        AddJobTruckLayer = new javax.swing.JPanel();
+        label44 = new java.awt.Label();
+        jSeparator7 = new javax.swing.JSeparator();
+        label45 = new java.awt.Label();
+        newJobTruckJobId = new javax.swing.JTextField();
+        label46 = new java.awt.Label();
+        NewJobTruckId = new javax.swing.JTextField();
+        SubmitAddJobTruck = new javax.swing.JButton();
+        CancelAddJobTruck = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(122, 0, 60));
@@ -1421,38 +1437,6 @@ public class Home extends javax.swing.JFrame {
             }
         });
 
-        ShowStorageLayer.setBackground(new java.awt.Color(0, 128, 97));
-
-        jTable6.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane6.setViewportView(jTable6);
-
-        javax.swing.GroupLayout ShowStorageLayerLayout = new javax.swing.GroupLayout(ShowStorageLayer);
-        ShowStorageLayer.setLayout(ShowStorageLayerLayout);
-        ShowStorageLayerLayout.setHorizontalGroup(
-            ShowStorageLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ShowStorageLayerLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 819, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(104, Short.MAX_VALUE))
-        );
-        ShowStorageLayerLayout.setVerticalGroup(
-            ShowStorageLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ShowStorageLayerLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(450, Short.MAX_VALUE))
-        );
-
         AddStorageLayer.setBackground(new java.awt.Color(0, 128, 97));
 
         newUnitNum.addActionListener(new java.awt.event.ActionListener() {
@@ -1580,8 +1564,40 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(203, Short.MAX_VALUE))
         );
 
-        StorageTabLayer.setLayer(ShowStorageLayer, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        ShowStorageLayer.setBackground(new java.awt.Color(0, 128, 97));
+
+        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane6.setViewportView(jTable6);
+
+        javax.swing.GroupLayout ShowStorageLayerLayout = new javax.swing.GroupLayout(ShowStorageLayer);
+        ShowStorageLayer.setLayout(ShowStorageLayerLayout);
+        ShowStorageLayerLayout.setHorizontalGroup(
+            ShowStorageLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ShowStorageLayerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 819, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(104, Short.MAX_VALUE))
+        );
+        ShowStorageLayerLayout.setVerticalGroup(
+            ShowStorageLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ShowStorageLayerLayout.createSequentialGroup()
+                .addGap(44, 44, 44)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(450, Short.MAX_VALUE))
+        );
+
         StorageTabLayer.setLayer(AddStorageLayer, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        StorageTabLayer.setLayer(ShowStorageLayer, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout StorageTabLayerLayout = new javax.swing.GroupLayout(StorageTabLayer);
         StorageTabLayer.setLayout(StorageTabLayerLayout);
@@ -1880,15 +1896,214 @@ public class Home extends javax.swing.JFrame {
 
         JobTrucksTab.setBackground(new java.awt.Color(0, 128, 97));
 
+        label39.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
+        label39.setForeground(new java.awt.Color(204, 204, 204));
+        label39.setText("Current Job - Truck assignments");
+
+        AddJobTruck.setText("Add");
+        AddJobTruck.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        AddJobTruck.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AddJobTruckMouseClicked(evt);
+            }
+        });
+        AddJobTruck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AddJobTruckActionPerformed(evt);
+            }
+        });
+
+        DeleteJobTruck.setText("Delete");
+        DeleteJobTruck.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        DeleteJobTruck.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DeleteJobTruckMouseClicked(evt);
+            }
+        });
+        DeleteJobTruck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                DeleteJobTruckActionPerformed(evt);
+            }
+        });
+
+        ShowJobTrucksLayer.setBackground(new java.awt.Color(0, 128, 97));
+
+        jTable8.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane8.setViewportView(jTable8);
+
+        javax.swing.GroupLayout ShowJobTrucksLayerLayout = new javax.swing.GroupLayout(ShowJobTrucksLayer);
+        ShowJobTrucksLayer.setLayout(ShowJobTrucksLayerLayout);
+        ShowJobTrucksLayerLayout.setHorizontalGroup(
+            ShowJobTrucksLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ShowJobTrucksLayerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 819, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(80, Short.MAX_VALUE))
+        );
+        ShowJobTrucksLayerLayout.setVerticalGroup(
+            ShowJobTrucksLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(ShowJobTrucksLayerLayout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(397, Short.MAX_VALUE))
+        );
+
+        AddJobTruckLayer.setBackground(new java.awt.Color(0, 128, 97));
+
+        label44.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label44.setForeground(new java.awt.Color(204, 204, 204));
+        label44.setText("Please assign truck to job");
+
+        label45.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label45.setForeground(new java.awt.Color(204, 204, 204));
+        label45.setText("Job Id:");
+
+        newJobTruckJobId.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                newJobTruckJobIdActionPerformed(evt);
+            }
+        });
+
+        label46.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        label46.setForeground(new java.awt.Color(204, 204, 204));
+        label46.setText("Truck Id:");
+
+        SubmitAddJobTruck.setText("Submit");
+        SubmitAddJobTruck.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SubmitAddJobTruckMouseClicked(evt);
+            }
+        });
+        SubmitAddJobTruck.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SubmitAddJobTruckActionPerformed(evt);
+            }
+        });
+
+        CancelAddJobTruck.setText("Cancel");
+        CancelAddJobTruck.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CancelAddJobTruckMouseClicked(evt);
+            }
+        });
+
+        javax.swing.GroupLayout AddJobTruckLayerLayout = new javax.swing.GroupLayout(AddJobTruckLayer);
+        AddJobTruckLayer.setLayout(AddJobTruckLayerLayout);
+        AddJobTruckLayerLayout.setHorizontalGroup(
+            AddJobTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddJobTruckLayerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(AddJobTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(AddJobTruckLayerLayout.createSequentialGroup()
+                        .addGroup(AddJobTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(AddJobTruckLayerLayout.createSequentialGroup()
+                                .addGap(63, 63, 63)
+                                .addComponent(SubmitAddJobTruck))
+                            .addComponent(label45, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(label46, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(AddJobTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(AddJobTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(NewJobTruckId)
+                                .addComponent(newJobTruckJobId, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(CancelAddJobTruck))
+                        .addGap(486, 486, 486))
+                    .addGroup(AddJobTruckLayerLayout.createSequentialGroup()
+                        .addGroup(AddJobTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(AddJobTruckLayerLayout.createSequentialGroup()
+                                .addComponent(label44, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jSeparator7))
+                        .addContainerGap())))
+        );
+        AddJobTruckLayerLayout.setVerticalGroup(
+            AddJobTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(AddJobTruckLayerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(label44, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator7, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(AddJobTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(AddJobTruckLayerLayout.createSequentialGroup()
+                        .addComponent(label45, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(49, 49, 49))
+                    .addComponent(label46, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, AddJobTruckLayerLayout.createSequentialGroup()
+                        .addComponent(newJobTruckJobId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(27, 27, 27)
+                        .addComponent(NewJobTruckId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(18, 18, 18)
+                .addGroup(AddJobTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SubmitAddJobTruck)
+                    .addComponent(CancelAddJobTruck))
+                .addContainerGap(372, Short.MAX_VALUE))
+        );
+
+        jLayeredPane1.setLayer(ShowJobTrucksLayer, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        jLayeredPane1.setLayer(AddJobTruckLayer, javax.swing.JLayeredPane.DEFAULT_LAYER);
+
+        javax.swing.GroupLayout jLayeredPane1Layout = new javax.swing.GroupLayout(jLayeredPane1);
+        jLayeredPane1.setLayout(jLayeredPane1Layout);
+        jLayeredPane1Layout.setHorizontalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(AddJobTruckLayer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(ShowJobTrucksLayer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+        jLayeredPane1Layout.setVerticalGroup(
+            jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(AddJobTruckLayer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(jLayeredPane1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jLayeredPane1Layout.createSequentialGroup()
+                    .addContainerGap()
+                    .addComponent(ShowJobTrucksLayer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addContainerGap()))
+        );
+
         javax.swing.GroupLayout JobTrucksTabLayout = new javax.swing.GroupLayout(JobTrucksTab);
         JobTrucksTab.setLayout(JobTrucksTabLayout);
         JobTrucksTabLayout.setHorizontalGroup(
             JobTrucksTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 959, Short.MAX_VALUE)
+            .addGroup(JobTrucksTabLayout.createSequentialGroup()
+                .addGap(25, 25, 25)
+                .addGroup(JobTrucksTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(JobTrucksTabLayout.createSequentialGroup()
+                        .addComponent(AddJobTruck, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(DeleteJobTruck, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(372, Short.MAX_VALUE))
+            .addGroup(JobTrucksTabLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLayeredPane1)
+                .addContainerGap())
         );
         JobTrucksTabLayout.setVerticalGroup(
             JobTrucksTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 726, Short.MAX_VALUE)
+            .addGroup(JobTrucksTabLayout.createSequentialGroup()
+                .addGap(31, 31, 31)
+                .addComponent(label39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(JobTrucksTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(AddJobTruck, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(DeleteJobTruck, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(jLayeredPane1)
+                .addContainerGap())
         );
 
         DetailsPane.addTab("Job - Trucks", JobTrucksTab);
@@ -1933,8 +2148,8 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_JobsButtonActionPerformed
 
     private void ScheduleButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ScheduleButtonMouseClicked
-                // TODO add your handling code here:
-                DetailsPane.setSelectedComponent(ScheduleTab);
+        // TODO add your handling code here:
+        DetailsPane.setSelectedComponent(ScheduleTab);
     }//GEN-LAST:event_ScheduleButtonMouseClicked
 
     private void ScheduleButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ScheduleButtonActionPerformed
@@ -1944,27 +2159,31 @@ public class Home extends javax.swing.JFrame {
 
     private void EmployeesButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_EmployeesButtonMouseClicked
         // TODO add your handling code here:
-        DetailsPane.setSelectedComponent(EmployeesTab);
         AddEmployeeLayer.setVisible(false);
         ShowEmployeesLayer.setVisible(true);
+        DetailsPane.setSelectedComponent(EmployeesTab);
+
     }//GEN-LAST:event_EmployeesButtonMouseClicked
 
     private void TrucksButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TrucksButtonMouseClicked
         // TODO add your handling code here:
-        DetailsPane.setSelectedComponent(TrucksTab);
         AddTruckLayer.setVisible(false);
         ShowTrucksLayer.setVisible(true);
+        DetailsPane.setSelectedComponent(TrucksTab);
+
     }//GEN-LAST:event_TrucksButtonMouseClicked
 
     private void JobsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JobsButtonMouseClicked
         // TODO add your handling code here:
-        DetailsPane.setSelectedComponent(JobsTab);
         AddJobLayer.setVisible(false);
         ShowJobsLayer.setVisible(true);
+        DetailsPane.setSelectedComponent(JobsTab);
     }//GEN-LAST:event_JobsButtonMouseClicked
 
     private void ClientsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ClientsButtonMouseClicked
         // TODO add your handling code here:
+        AddClientLayer.setVisible(false);
+        ShowClientsLayer.setVisible(true);
         DetailsPane.setSelectedComponent(ClientsTab);
     }//GEN-LAST:event_ClientsButtonMouseClicked
 
@@ -1972,6 +2191,8 @@ public class Home extends javax.swing.JFrame {
         // TODO add your handling code here:
         AddStorageLayer.setVisible(false);
         ShowStorageLayer.setVisible(true);
+        DetailsPane.setSelectedComponent(StorageTab);
+
     }//GEN-LAST:event_StorageButtonMouseClicked
 
     private void TrucksButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrucksButtonActionPerformed
@@ -2163,8 +2384,8 @@ public class Home extends javax.swing.JFrame {
 
     private void AddJobEmpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddJobEmpMouseClicked
         // TODO add your handling code here:
-        AddJobLayer.setVisible(true);
-        ShowJobsLayer.setVisible(false);
+        AddJobEmpLayer.setVisible(true);
+        ShowJobEmpLayer.setVisible(false);
     }//GEN-LAST:event_AddJobEmpMouseClicked
 
     private void AddJobEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddJobEmpActionPerformed
@@ -2185,14 +2406,14 @@ public class Home extends javax.swing.JFrame {
 
     private void CancelAddJobEmpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelAddJobEmpMouseClicked
         // TODO add your handling code here:
-        AddJobLayer.setVisible(false);
-        ShowJobsLayer.setVisible(true);
+        AddJobEmpLayer.setVisible(false);
+        ShowJobEmpLayer.setVisible(true);
     }//GEN-LAST:event_CancelAddJobEmpMouseClicked
 
     private void SubmitAddJobEmpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitAddJobEmpMouseClicked
         // TODO add your handling code here:
-        AddJobLayer.setVisible(false);
-        ShowJobsLayer.setVisible(true);
+        AddJobEmpLayer.setVisible(false);
+        ShowJobEmpLayer.setVisible(true);
     }//GEN-LAST:event_SubmitAddJobEmpMouseClicked
 
     private void JobEmpTabLayerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JobEmpTabLayerMouseClicked
@@ -2202,21 +2423,60 @@ public class Home extends javax.swing.JFrame {
 
     private void JobEmpsButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JobEmpsButtonMouseClicked
         // TODO add your handling code here:
-        AddJobLayer.setVisible(false);
-        ShowJobsLayer.setVisible(true);
+        AddJobEmpLayer.setVisible(false);
+        ShowJobEmpLayer.setVisible(true);
+        DetailsPane.setSelectedComponent(JobEmpsTab);
     }//GEN-LAST:event_JobEmpsButtonMouseClicked
 
     private void JobTrucksButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JobTrucksButtonMouseClicked
         // TODO add your handling code here:
-        AddJobLayer.setVisible(false);
-        ShowJobsLayer.setVisible(true);
+        AddJobTruckLayer.setVisible(false);
+        ShowJobTrucksLayer.setVisible(true);
+        DetailsPane.setSelectedComponent(JobTrucksTab);
     }//GEN-LAST:event_JobTrucksButtonMouseClicked
 
     private void SubmitAddJobEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitAddJobEmpActionPerformed
         // TODO add your handling code here:
-        AddJobLayer.setVisible(false);
-        ShowJobsLayer.setVisible(true);
+        
     }//GEN-LAST:event_SubmitAddJobEmpActionPerformed
+
+    private void AddJobTruckMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddJobTruckMouseClicked
+        // TODO add your handling code here:
+        AddJobTruckLayer.setVisible(true);
+        ShowJobTrucksLayer.setVisible(false);
+    }//GEN-LAST:event_AddJobTruckMouseClicked
+
+    private void AddJobTruckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddJobTruckActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AddJobTruckActionPerformed
+
+    private void DeleteJobTruckMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteJobTruckMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DeleteJobTruckMouseClicked
+
+    private void DeleteJobTruckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteJobTruckActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_DeleteJobTruckActionPerformed
+
+    private void newJobTruckJobIdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_newJobTruckJobIdActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_newJobTruckJobIdActionPerformed
+
+    private void SubmitAddJobTruckMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitAddJobTruckMouseClicked
+        // TODO add your handling code here:
+        AddJobTruckLayer.setVisible(false);
+        ShowJobTrucksLayer.setVisible(true);
+    }//GEN-LAST:event_SubmitAddJobTruckMouseClicked
+
+    private void SubmitAddJobTruckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SubmitAddJobTruckActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SubmitAddJobTruckActionPerformed
+
+    private void CancelAddJobTruckMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CancelAddJobTruckMouseClicked
+        // TODO add your handling code here:
+        AddJobTruckLayer.setVisible(false);
+        ShowJobTrucksLayer.setVisible(true);
+    }//GEN-LAST:event_CancelAddJobTruckMouseClicked
 
     /**
      * @param args the command line arguments
@@ -2267,6 +2527,8 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton AddJobEmp;
     private javax.swing.JPanel AddJobEmpLayer;
     private javax.swing.JPanel AddJobLayer;
+    private javax.swing.JButton AddJobTruck;
+    private javax.swing.JPanel AddJobTruckLayer;
     private javax.swing.JButton AddStorage;
     private javax.swing.JPanel AddStorageLayer;
     private javax.swing.JButton AddTruck;
@@ -2275,6 +2537,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton CancelAddEmployee;
     private javax.swing.JButton CancelAddJob;
     private javax.swing.JButton CancelAddJobEmp;
+    private javax.swing.JButton CancelAddJobTruck;
     private javax.swing.JButton CancelAddStorage;
     private javax.swing.JButton CancelAddTruck;
     private javax.swing.JLayeredPane ClientTabLayer;
@@ -2284,10 +2547,10 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JButton DeleteEmployee;
     private javax.swing.JButton DeleteJob;
     private javax.swing.JButton DeleteJobEmp;
+    private javax.swing.JButton DeleteJobTruck;
     private javax.swing.JButton DeleteStorage;
     private javax.swing.JButton DeleteTruck;
     private javax.swing.JTabbedPane DetailsPane;
-    private javax.swing.JTabbedPane DetailsPane1;
     private javax.swing.JLayeredPane EmployeeTabLayer;
     private javax.swing.JButton EmployeesButton;
     private javax.swing.JPanel EmployeesTab;
@@ -2314,6 +2577,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField NewJobHours;
     private javax.swing.JTextField NewJobService;
     private javax.swing.JTextField NewJobToLoc;
+    private javax.swing.JTextField NewJobTruckId;
     private javax.swing.JTextField NewStorageClient;
     private javax.swing.JTextField NewStorageLoc;
     private javax.swing.JTextField NewStorageRate;
@@ -2324,31 +2588,27 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField NewTruckSize;
     private javax.swing.JButton ScheduleButton;
     private javax.swing.JPanel ScheduleTab;
-    private javax.swing.JPanel ScheduleTab1;
     private javax.swing.JPanel ShowClientsLayer;
     private javax.swing.JPanel ShowEmployeesLayer;
     private javax.swing.JPanel ShowJobEmpLayer;
+    private javax.swing.JPanel ShowJobTrucksLayer;
     private javax.swing.JPanel ShowJobsLayer;
     private javax.swing.JPanel ShowStorageLayer;
-    private javax.swing.JPanel ShowStorageLayer1;
-    private javax.swing.JPanel ShowStorageLayer2;
-    private javax.swing.JPanel ShowStorageLayer3;
     private javax.swing.JPanel ShowTrucksLayer;
     private javax.swing.JButton StorageButton;
     private javax.swing.JPanel StorageTab;
     private javax.swing.JLayeredPane StorageTabLayer;
-    private javax.swing.JLayeredPane StorageTabLayer1;
-    private javax.swing.JLayeredPane StorageTabLayer2;
-    private javax.swing.JLayeredPane StorageTabLayer3;
     private javax.swing.JButton SubmitAddClient;
     private javax.swing.JButton SubmitAddEmployee;
     private javax.swing.JButton SubmitAddJob;
     private javax.swing.JButton SubmitAddJobEmp;
+    private javax.swing.JButton SubmitAddJobTruck;
     private javax.swing.JButton SubmitAddStorage;
     private javax.swing.JButton SubmitAddTruck;
     private javax.swing.JLayeredPane TruckTabLayer;
     private javax.swing.JButton TrucksButton;
     private javax.swing.JPanel TrucksTab;
+    private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
@@ -2357,12 +2617,14 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
+    private javax.swing.JSeparator jSeparator7;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
@@ -2370,6 +2632,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
     private javax.swing.JTable jTable7;
+    private javax.swing.JTable jTable8;
     private javax.swing.JTextField jTextField1;
     private java.awt.Label label1;
     private java.awt.Label label10;
@@ -2408,6 +2671,9 @@ public class Home extends javax.swing.JFrame {
     private java.awt.Label label41;
     private java.awt.Label label42;
     private java.awt.Label label43;
+    private java.awt.Label label44;
+    private java.awt.Label label45;
+    private java.awt.Label label46;
     private java.awt.Label label5;
     private java.awt.Label label6;
     private java.awt.Label label7;
@@ -2417,6 +2683,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField newEmployeeId;
     private javax.swing.JTextField newJobEmpJobId;
     private javax.swing.JTextField newJobId;
+    private javax.swing.JTextField newJobTruckJobId;
     private javax.swing.JTextField newTruckId;
     private javax.swing.JTextField newUnitNum;
     // End of variables declaration//GEN-END:variables
