@@ -18,7 +18,7 @@ public class Connector {
     private static String url = "jdbc:mysql://triton.towson.edu:3360/jdelar1db"; 
     private static Connection connection=null;
     
-     public static Connection getConnection() throws InstantiationException, IllegalAccessException {
+     public static Connection getConnection() {
         Object newInstance;
            
         try {
@@ -32,10 +32,15 @@ public class Connector {
         } catch (ClassNotFoundException ex) {
             // log an exception. for example:
             System.out.println("Driver not found."); 
+        } catch(Exception ex) {
+            //I don't want to handle this exception in my code. Fuck Java
+            ex.printStackTrace();
         }
+        
         return connection;
     }    
 }
+
 //       Statement queryStatement = connection.createStatement();
 //        updateStaff = null;
 //            String querys="select * from *****db.staff;"; //your db 
