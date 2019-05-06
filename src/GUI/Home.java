@@ -8,11 +8,13 @@ package GUI;
 import SQL.Connector;
 import SQL.Statements;
 import java.sql.Connection;
+import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -52,7 +54,7 @@ public class Home extends javax.swing.JFrame {
         ScheduleTab = new javax.swing.JPanel();
         label6 = new java.awt.Label();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        scheduleTable = new javax.swing.JTable();
         EmployeesTab = new javax.swing.JPanel();
         label1 = new java.awt.Label();
         AddEmployees = new javax.swing.JButton();
@@ -177,7 +179,7 @@ public class Home extends javax.swing.JFrame {
         JobEmpTabLayer = new javax.swing.JLayeredPane();
         ShowJobEmpLayer = new javax.swing.JPanel();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jTable7 = new javax.swing.JTable();
+        jobEmpsTable = new javax.swing.JTable();
         AddJobEmpLayer = new javax.swing.JPanel();
         newJobEmpJobId = new javax.swing.JTextField();
         CancelAddJobEmp = new javax.swing.JButton();
@@ -194,7 +196,7 @@ public class Home extends javax.swing.JFrame {
         jLayeredPane1 = new javax.swing.JLayeredPane();
         ShowJobTrucksLayer = new javax.swing.JPanel();
         jScrollPane8 = new javax.swing.JScrollPane();
-        jTable8 = new javax.swing.JTable();
+        jobTrucksTable = new javax.swing.JTable();
         AddJobTruckLayer = new javax.swing.JPanel();
         label44 = new java.awt.Label();
         jSeparator7 = new javax.swing.JSeparator();
@@ -377,23 +379,28 @@ public class Home extends javax.swing.JFrame {
 
         ScheduleTab.setBackground(new java.awt.Color(0, 128, 97));
         ScheduleTab.setForeground(new java.awt.Color(255, 255, 255));
+        ScheduleTab.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                ScheduleTabComponentShown(evt);
+            }
+        });
 
         label6.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         label6.setForeground(new java.awt.Color(204, 204, 204));
         label6.setText("Current Schedule");
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        scheduleTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null},
+                {null, null, null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Job Date", "First Name", "Last Name", "# of Trucks", "# of Employees", "Service"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(scheduleTable);
 
         javax.swing.GroupLayout ScheduleTabLayout = new javax.swing.GroupLayout(ScheduleTab);
         ScheduleTab.setLayout(ScheduleTabLayout);
@@ -401,10 +408,13 @@ public class Home extends javax.swing.JFrame {
             ScheduleTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ScheduleTabLayout.createSequentialGroup()
                 .addGap(32, 32, 32)
-                .addGroup(ScheduleTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 819, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(108, 108, 108))
+                .addGroup(ScheduleTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(ScheduleTabLayout.createSequentialGroup()
+                        .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(628, 628, 628))
+                    .addGroup(ScheduleTabLayout.createSequentialGroup()
+                        .addComponent(jScrollPane1)
+                        .addContainerGap())))
         );
         ScheduleTabLayout.setVerticalGroup(
             ScheduleTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -412,8 +422,8 @@ public class Home extends javax.swing.JFrame {
                 .addGap(29, 29, 29)
                 .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(518, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 287, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(325, Short.MAX_VALUE))
         );
 
         DetailsPane.addTab("Schedule", ScheduleTab);
@@ -974,6 +984,11 @@ public class Home extends javax.swing.JFrame {
                 "Job Id", "From Location", "To Location", "Total Hours", "Estimated Cost", "Job Date", "Client Id", "Service"
             }
         ));
+        jobsTable.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jobsTableMouseClicked(evt);
+            }
+        });
         jScrollPane4.setViewportView(jobsTable);
 
         javax.swing.GroupLayout ShowJobsLayerLayout = new javax.swing.GroupLayout(ShowJobsLayer);
@@ -1184,7 +1199,7 @@ public class Home extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(DeleteJob, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(657, Short.MAX_VALUE))
+                .addContainerGap(661, Short.MAX_VALUE))
             .addGroup(JobsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(JobsTabLayout.createSequentialGroup()
                     .addContainerGap()
@@ -1317,7 +1332,7 @@ public class Home extends javax.swing.JFrame {
                                     .addComponent(NewClientLName, javax.swing.GroupLayout.DEFAULT_SIZE, 136, Short.MAX_VALUE)
                                     .addComponent(NewClientFName)
                                     .addComponent(newClientId))))
-                        .addGap(0, 658, Short.MAX_VALUE))))
+                        .addGap(0, 639, Short.MAX_VALUE))))
         );
         AddClientLayerLayout.setVerticalGroup(
             AddClientLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1576,7 +1591,7 @@ public class Home extends javax.swing.JFrame {
                                         .addComponent(NewStorageSize, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
                                         .addComponent(NewStorageLoc)
                                         .addComponent(newUnitNum)))))
-                        .addGap(0, 610, Short.MAX_VALUE))))
+                        .addGap(0, 622, Short.MAX_VALUE))))
         );
         AddStorageLayerLayout.setVerticalGroup(
             AddStorageLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1646,33 +1661,34 @@ public class Home extends javax.swing.JFrame {
                 .addContainerGap(450, Short.MAX_VALUE))
         );
 
-        StorageTabLayer.setLayer(AddStorageLayer, javax.swing.JLayeredPane.DEFAULT_LAYER);
+        StorageTabLayer.setLayer(AddStorageLayer, javax.swing.JLayeredPane.POPUP_LAYER);
         StorageTabLayer.setLayer(ShowStorageLayer, javax.swing.JLayeredPane.DEFAULT_LAYER);
 
         javax.swing.GroupLayout StorageTabLayerLayout = new javax.swing.GroupLayout(StorageTabLayer);
         StorageTabLayer.setLayout(StorageTabLayerLayout);
         StorageTabLayerLayout.setHorizontalGroup(
             StorageTabLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StorageTabLayerLayout.createSequentialGroup()
-                .addComponent(AddStorageLayer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(StorageTabLayerLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(ShowStorageLayer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
             .addGroup(StorageTabLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(StorageTabLayerLayout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(ShowStorageLayer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addContainerGap()))
+                    .addGap(24, 24, 24)
+                    .addComponent(AddStorageLayer, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGap(24, 24, 24)))
         );
         StorageTabLayerLayout.setVerticalGroup(
             StorageTabLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(StorageTabLayerLayout.createSequentialGroup()
-                .addGap(25, 25, 25)
-                .addComponent(AddStorageLayer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StorageTabLayerLayout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(ShowStorageLayer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addGroup(StorageTabLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, StorageTabLayerLayout.createSequentialGroup()
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(ShowStorageLayer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
+                .addGroup(StorageTabLayerLayout.createSequentialGroup()
+                    .addGap(33, 33, 33)
+                    .addComponent(AddStorageLayer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addContainerGap(34, Short.MAX_VALUE)))
         );
 
         javax.swing.GroupLayout StorageTabLayout = new javax.swing.GroupLayout(StorageTab);
@@ -1687,7 +1703,7 @@ public class Home extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(DeleteStorage, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(556, Short.MAX_VALUE))
+                .addContainerGap(553, Short.MAX_VALUE))
             .addGroup(StorageTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(StorageTabLayout.createSequentialGroup()
                     .addContainerGap()
@@ -1714,6 +1730,11 @@ public class Home extends javax.swing.JFrame {
         DetailsPane.addTab("Storage Units", StorageTab);
 
         JobEmpsTab.setBackground(new java.awt.Color(0, 128, 97));
+        JobEmpsTab.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                JobEmpsTabComponentShown(evt);
+            }
+        });
 
         label38.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         label38.setForeground(new java.awt.Color(204, 204, 204));
@@ -1753,34 +1774,57 @@ public class Home extends javax.swing.JFrame {
 
         ShowJobEmpLayer.setBackground(new java.awt.Color(0, 128, 97));
 
-        jTable7.setModel(new javax.swing.table.DefaultTableModel(
+        jobEmpsTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Job ID", "Employee ID"
             }
         ));
-        jScrollPane7.setViewportView(jTable7);
+        jScrollPane7.setViewportView(jobEmpsTable);
 
         javax.swing.GroupLayout ShowJobEmpLayerLayout = new javax.swing.GroupLayout(ShowJobEmpLayer);
         ShowJobEmpLayer.setLayout(ShowJobEmpLayerLayout);
         ShowJobEmpLayerLayout.setHorizontalGroup(
             ShowJobEmpLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ShowJobEmpLayerLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 819, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addGap(117, 117, 117)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 674, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(120, Short.MAX_VALUE))
         );
         ShowJobEmpLayerLayout.setVerticalGroup(
             ShowJobEmpLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ShowJobEmpLayerLayout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(443, Short.MAX_VALUE))
+                .addGap(42, 42, 42)
+                .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 464, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(82, Short.MAX_VALUE))
         );
 
         AddJobEmpLayer.setBackground(new java.awt.Color(0, 128, 97));
@@ -1945,6 +1989,11 @@ public class Home extends javax.swing.JFrame {
         DetailsPane.addTab("Job - Employees", JobEmpsTab);
 
         JobTrucksTab.setBackground(new java.awt.Color(0, 128, 97));
+        JobTrucksTab.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                JobTrucksTabComponentShown(evt);
+            }
+        });
 
         label39.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         label39.setForeground(new java.awt.Color(204, 204, 204));
@@ -1978,34 +2027,55 @@ public class Home extends javax.swing.JFrame {
 
         ShowJobTrucksLayer.setBackground(new java.awt.Color(0, 128, 97));
 
-        jTable8.setModel(new javax.swing.table.DefaultTableModel(
+        jobTrucksTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null},
+                {null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Job ID", "Truck ID"
             }
         ));
-        jScrollPane8.setViewportView(jTable8);
+        jScrollPane8.setViewportView(jobTrucksTable);
 
         javax.swing.GroupLayout ShowJobTrucksLayerLayout = new javax.swing.GroupLayout(ShowJobTrucksLayer);
         ShowJobTrucksLayer.setLayout(ShowJobTrucksLayerLayout);
         ShowJobTrucksLayerLayout.setHorizontalGroup(
             ShowJobTrucksLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ShowJobTrucksLayerLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 819, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addGap(118, 118, 118)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 676, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(120, Short.MAX_VALUE))
         );
         ShowJobTrucksLayerLayout.setVerticalGroup(
             ShowJobTrucksLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ShowJobTrucksLayerLayout.createSequentialGroup()
-                .addGap(51, 51, 51)
-                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(397, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ShowJobTrucksLayerLayout.createSequentialGroup()
+                .addContainerGap(51, Short.MAX_VALUE)
+                .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(60, 60, 60))
         );
 
         AddJobTruckLayer.setBackground(new java.awt.Color(0, 128, 97));
@@ -2242,7 +2312,6 @@ public class Home extends javax.swing.JFrame {
         AddStorageLayer.setVisible(false);
         ShowStorageLayer.setVisible(true);
         DetailsPane.setSelectedComponent(StorageTab);
-
     }//GEN-LAST:event_StorageButtonMouseClicked
 
     private void TrucksButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TrucksButtonActionPerformed
@@ -2254,7 +2323,27 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_StorageTabLayerMouseClicked
 
     private void SubmitAddStorageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitAddStorageMouseClicked
-        // TODO add your handling code here:
+        String unitNumber = newUnitNum.getText();
+        String rate = NewStorageRate.getText();
+        String location = NewStorageLoc.getText();
+        String size = NewStorageSize.getText();
+        String clientId = NewStorageClient.getText();
+        String query = Statements.AddStorage(unitNumber, location, rate, size, clientId);
+        System.out.println(query);
+        Connection conn = Connector.getConnection();
+        
+        try (Statement stmt = conn.createStatement()){
+            int numInserted = stmt.executeUpdate(query);
+            
+            if (numInserted > 0) {
+                //success
+            } else {
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }  
+
         AddStorageLayer.setVisible(false);
         ShowStorageLayer.setVisible(true);
     }//GEN-LAST:event_SubmitAddStorageMouseClicked
@@ -2274,8 +2363,24 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_DeleteStorageActionPerformed
 
     private void DeleteStorageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteStorageMouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DeleteStorageMouseClicked
+        int row = storageTable.getSelectedRow();
+        if (row == -1) return;
+        
+        String unitNumber = storageTable.getValueAt(row, 0).toString();
+        String query = Statements.DeleteStorage(unitNumber);
+        Connection conn = Connector.getConnection();
+        
+        try (Statement stmt = conn.createStatement()){
+            int numDeleted = stmt.executeUpdate(query);
+            
+            if (numDeleted > 0) {
+                //success
+            } else {
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }    }//GEN-LAST:event_DeleteStorageMouseClicked
 
     private void AddStorageActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddStorageActionPerformed
         // TODO add your handling code here:
@@ -2288,7 +2393,25 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_AddStorageMouseClicked
 
     private void SubmitAddClientMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitAddClientMouseClicked
-        // TODO add your handling code here:
+        String clientId = newClientId.getText();
+        String lName = NewClientLName.getText();
+        String fName = NewClientFName.getText();
+        String phone = NewClientPhone.getText();
+        String query = Statements.AddClient(clientId, fName, lName, phone);
+        System.out.println(query);
+        Connection conn = Connector.getConnection();
+        
+        try (Statement stmt = conn.createStatement()){
+            int numInserted = stmt.executeUpdate(query);
+            
+            if (numInserted > 0) {
+                //success
+            } else {
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }       
         AddClientLayer.setVisible(false);
         ShowClientsLayer.setVisible(true);
     }//GEN-LAST:event_SubmitAddClientMouseClicked
@@ -2304,7 +2427,24 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_DeleteClientActionPerformed
 
     private void DeleteClientMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteClientMouseClicked
-        // TODO add your handling code here:
+        int row = clientTable.getSelectedRow();
+        if (row == -1) return;
+        
+        String clientId = clientTable.getValueAt(row, 0).toString();
+        String query = Statements.DeleteClient(clientId);
+        Connection conn = Connector.getConnection();
+        
+        try (Statement stmt = conn.createStatement()){
+            int numDeleted = stmt.executeUpdate(query);
+            
+            if (numDeleted > 0) {
+                //success
+            } else {
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_DeleteClientMouseClicked
 
     private void AddClientActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddClientActionPerformed
@@ -2323,8 +2463,34 @@ public class Home extends javax.swing.JFrame {
 
     private void SubmitAddJobMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitAddJobMouseClicked
         // TODO add your handling code here:
+        String jobId = newJobId.getText();
+        String toLoc = NewJobToLoc.getText();
+        String fromLoc = NewJobFromLoc.getText();
+        String hours = NewJobHours.getText();
+        String cost = NewJobCost.getText();
+        String date = NewJobDate.getText();
+        String clientId = NewJobClientId.getText();
+        String service = NewJobService.getText();
+        String query = Statements.AddJob(jobId, toLoc, fromLoc, hours, cost, date, clientId, service);
+        System.out.println(query);
+        Connection conn = Connector.getConnection();
+        
+        try (Statement stmt = conn.createStatement()){
+            int numInserted = stmt.executeUpdate(query);
+            
+            if (numInserted > 0) {
+                //success
+            } else {
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        DefaultTableModel dm = (DefaultTableModel)jobsTable.getModel();
+        dm.fireTableDataChanged();
         AddJobLayer.setVisible(false);
         ShowJobsLayer.setVisible(true);
+        
     }//GEN-LAST:event_SubmitAddJobMouseClicked
 
     private void CancelAddJobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CancelAddJobActionPerformed
@@ -2348,7 +2514,28 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_DeleteJobActionPerformed
 
     private void DeleteJobMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteJobMouseClicked
-        // TODO add your handling code here:
+        int row = jobsTable.getSelectedRow();
+        if (row == -1) return;
+        
+        String jobId = jobsTable.getValueAt(row, 0).toString();
+        String query = Statements.DeleteJob(jobId);
+        Connection conn = Connector.getConnection();
+        
+        try (Statement stmt = conn.createStatement()){
+            int numDeleted = stmt.executeUpdate(query);
+            
+            if (numDeleted > 0) {
+                //success
+            } else {
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
+        DefaultTableModel dm = (DefaultTableModel)jobsTable.getModel();
+        dm.fireTableDataChanged(); // notifies the JTable that the model has changed
+        
     }//GEN-LAST:event_DeleteJobMouseClicked
 
     private void AddJobActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddJobActionPerformed
@@ -2385,6 +2572,7 @@ public class Home extends javax.swing.JFrame {
 
     private void SubmitAddTruckMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitAddTruckMouseClicked
         // TODO add your handling code here:
+        
         AddTruckLayer.setVisible(false);
         ShowTrucksLayer.setVisible(true);
     }//GEN-LAST:event_SubmitAddTruckMouseClicked
@@ -2532,97 +2720,15 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_DetailsPaneComponentShown
 
     private void employeesTableComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_employeesTableComponentShown
-        try {
-            DefaultTableModel dm = (DefaultTableModel) employeesTable.getModel();
-            int rowCount = dm.getRowCount();
-            //Remove rows one by one from the end of the table
-            for (int i = rowCount - 1; i >= 0; i--) {
-                dm.removeRow(i);
-            }
-            
-            
-            Connection connection = Connector.getConnection();
-            Statement queryStatement = connection.createStatement();
-            
-            ResultSet results = queryStatement.executeQuery(Statements.GET_EMPLOYEES);
-            while(results.next())
-            {
-                dm.addRow(new String[] {
-                    results.getString("employeeID"),
-                    results.getString("fName"),
-                    results.getString("lName"),
-                    results.getString("DOB")
-                });
-                
-            }
-        } catch (SQLException ex) {
-            System.out.println("Error updating Employees table.");
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       
     }//GEN-LAST:event_employeesTableComponentShown
 
     private void EmployeesTabComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_EmployeesTabComponentShown
-        try {
-            DefaultTableModel dm = (DefaultTableModel) employeesTable.getModel();
-            int rowCount = dm.getRowCount();
-            //Remove rows one by one from the end of the table
-            for (int i = rowCount - 1; i >= 0; i--) {
-                dm.removeRow(i);
-            }
-            
-            
-            Connection connection = Connector.getConnection();
-            Statement queryStatement = connection.createStatement();
-            
-            ResultSet results = queryStatement.executeQuery(Statements.GET_EMPLOYEES);
-            while(results.next())
-            {
-                dm.addRow(new String[] {
-                    results.getString("employeeID"),
-                    results.getString("fName"),
-                    results.getString("lName"),
-                    results.getString("DOB")
-                });
-                
-            }
-        } catch (SQLException ex) {
-            System.out.println("Error updating Employees table.");
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        TableUtils.PopulateTableFromStatement(employeesTable, Statements.GET_EMPLOYEES);
     }//GEN-LAST:event_EmployeesTabComponentShown
 
     private void JobsTabComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_JobsTabComponentShown
-        try {
-            DefaultTableModel dm = (DefaultTableModel) jobsTable.getModel();
-            int rowCount = dm.getRowCount();
-            //Remove rows one by one from the end of the table
-            for (int i = rowCount - 1; i >= 0; i--) {
-                dm.removeRow(i);
-            }
-            
-            
-            Connection connection = Connector.getConnection();
-            Statement queryStatement = connection.createStatement();
-            
-            ResultSet results = queryStatement.executeQuery(Statements.GET_JOBS);
-            while(results.next())
-            {
-                dm.addRow(new String[] {
-                    results.getString("jobID"),
-                    results.getString("fromLoc"),
-                    results.getString("toLoc"),
-                    results.getString("tot_hours"),
-                    results.getString("estCost"),
-                    results.getString("jobDate"),
-                    results.getString("clientID"),
-                    results.getString("services")
-                });
-                
-            }
-        } catch (SQLException ex) {
-            System.out.println("Error updating Jobs table.");
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        TableUtils.PopulateTableFromStatement(jobsTable, Statements.GET_JOBS);
     }//GEN-LAST:event_JobsTabComponentShown
 
     private void clientTableComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_clientTableComponentShown
@@ -2630,65 +2736,28 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_clientTableComponentShown
 
     private void ClientsTabComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_ClientsTabComponentShown
-        try {
-            DefaultTableModel dm = (DefaultTableModel) clientTable.getModel();
-            int rowCount = dm.getRowCount();
-            //Remove rows one by one from the end of the table
-            for (int i = rowCount - 1; i >= 0; i--) {
-                dm.removeRow(i);
-            }
-            
-            
-            Connection connection = Connector.getConnection();
-            Statement queryStatement = connection.createStatement();
-            
-            ResultSet results = queryStatement.executeQuery(Statements.GET_CLIENTS);
-            while(results.next())
-            {
-                dm.addRow(new String[] {
-                    results.getString("clientID"),
-                    results.getString("fName"),
-                    results.getString("lName"),
-                    results.getString("phone"),
-                });
-                
-            }
-        } catch (SQLException ex) {
-            System.out.println("Error updating Clients table.");
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        TableUtils.PopulateTableFromStatement(clientTable, Statements.GET_CLIENTS);
     }//GEN-LAST:event_ClientsTabComponentShown
 
     private void StorageTabComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_StorageTabComponentShown
-       try {
-            DefaultTableModel dm = (DefaultTableModel) storageTable.getModel();
-            int rowCount = dm.getRowCount();
-            //Remove rows one by one from the end of the table
-            for (int i = rowCount - 1; i >= 0; i--) {
-                dm.removeRow(i);
-            }
-            
-            
-            Connection connection = Connector.getConnection();
-            Statement queryStatement = connection.createStatement();
-            
-            ResultSet results = queryStatement.executeQuery(Statements.GET_STORAGE);
-            while(results.next())
-            {
-                dm.addRow(new String[] {
-                    results.getString("unitNumber"),
-                    results.getString("location"),
-                    results.getString("rate"),
-                    results.getString("size"),
-                    results.getString("clientID"),
-                });
-                
-            }
-        } catch (SQLException ex) {
-            System.out.println("Error updating Storage table.");
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        }
+       TableUtils.PopulateTableFromStatement(storageTable, Statements.GET_STORAGE);
     }//GEN-LAST:event_StorageTabComponentShown
+
+    private void JobEmpsTabComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_JobEmpsTabComponentShown
+        TableUtils.PopulateTableFromStatement(jobEmpsTable, Statements.GET_JOBEMPS);
+    }//GEN-LAST:event_JobEmpsTabComponentShown
+
+    private void JobTrucksTabComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_JobTrucksTabComponentShown
+        TableUtils.PopulateTableFromStatement(jobTrucksTable, Statements.GET_JOBTRUCKS);
+    }//GEN-LAST:event_JobTrucksTabComponentShown
+
+    private void jobsTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jobsTableMouseClicked
+        // TODO add your handling code
+    }//GEN-LAST:event_jobsTableMouseClicked
+
+    private void ScheduleTabComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_ScheduleTabComponentShown
+        TableUtils.PopulateTableFromStatement(scheduleTable, Statements.GET_SCHEDULE);
+    }//GEN-LAST:event_ScheduleTabComponentShown
 
     /**
      * @param args the command line arguments
@@ -2839,11 +2908,10 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
-    private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable7;
-    private javax.swing.JTable jTable8;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable jobEmpsTable;
+    private javax.swing.JTable jobTrucksTable;
     private javax.swing.JTable jobsTable;
     private java.awt.Label label1;
     private java.awt.Label label10;
@@ -2897,6 +2965,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField newJobTruckJobId;
     private javax.swing.JTextField newTruckId;
     private javax.swing.JTextField newUnitNum;
+    private javax.swing.JTable scheduleTable;
     private javax.swing.JTable storageTable;
     // End of variables declaration//GEN-END:variables
 }

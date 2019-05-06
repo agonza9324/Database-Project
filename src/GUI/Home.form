@@ -297,6 +297,9 @@
               <Color blue="ff" green="ff" red="ff" type="rgb"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="componentShown" listener="java.awt.event.ComponentListener" parameters="java.awt.event.ComponentEvent" handler="ScheduleTabComponentShown"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Schedule">
@@ -310,11 +313,16 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="32" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="jScrollPane1" min="-2" pref="819" max="-2" attributes="0"/>
-                          <Component id="label6" min="-2" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="label6" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="628" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" attributes="0">
+                              <Component id="jScrollPane1" max="32767" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                          </Group>
                       </Group>
-                      <EmptySpace min="-2" pref="108" max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -324,8 +332,8 @@
                       <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
                       <Component id="label6" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="94" max="-2" attributes="0"/>
-                      <EmptySpace pref="518" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="287" max="-2" attributes="0"/>
+                      <EmptySpace pref="325" max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -349,15 +357,54 @@
 
               <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
               <SubComponents>
-                <Component class="javax.swing.JTable" name="jTable1">
+                <Component class="javax.swing.JTable" name="scheduleTable">
                   <Properties>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="4" rowCount="4">
-                        <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                        <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                      <Table columnCount="6" rowCount="4">
+                        <Column editable="true" title="Job Date" type="java.lang.Object"/>
+                        <Column editable="true" title="First Name" type="java.lang.Object"/>
+                        <Column editable="true" title="Last Name" type="java.lang.Object"/>
+                        <Column editable="true" title="# of Trucks" type="java.lang.Object"/>
+                        <Column editable="true" title="# of Employees" type="java.lang.Object"/>
+                        <Column editable="true" title="Service" type="java.lang.Object"/>
                       </Table>
+                    </Property>
+                    <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                      <TableColumnModel selectionModel="0">
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                        <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                          <Title/>
+                          <Editor/>
+                          <Renderer/>
+                        </Column>
+                      </TableColumnModel>
+                    </Property>
+                    <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                      <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                     </Property>
                   </Properties>
                 </Component>
@@ -1186,7 +1233,7 @@
                           </Group>
                           <Component id="label5" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="657" max="32767" attributes="0"/>
+                      <EmptySpace pref="661" max="32767" attributes="0"/>
                   </Group>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
@@ -1389,6 +1436,9 @@
                               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                             </Property>
                           </Properties>
+                          <Events>
+                            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jobsTableMouseClicked"/>
+                          </Events>
                         </Component>
                       </SubComponents>
                     </Container>
@@ -1836,7 +1886,7 @@
                                               </Group>
                                           </Group>
                                       </Group>
-                                      <EmptySpace min="0" pref="658" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="639" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -2082,7 +2132,7 @@
                           </Group>
                           <Component id="label3" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="556" max="32767" attributes="0"/>
+                      <EmptySpace pref="553" max="32767" attributes="0"/>
                   </Group>
                   <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                       <Group type="102" attributes="0">
@@ -2163,31 +2213,32 @@
               <Layout>
                 <DimensionLayout dim="0">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="1" attributes="0">
-                          <Component id="AddStorageLayer" max="32767" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="ShowStorageLayer" max="32767" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="ShowStorageLayer" max="32767" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
+                              <Component id="AddStorageLayer" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
                 </DimensionLayout>
                 <DimensionLayout dim="1">
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <EmptySpace min="-2" pref="25" max="-2" attributes="0"/>
-                          <Component id="AddStorageLayer" min="-2" max="-2" attributes="0"/>
+                      <Group type="102" alignment="1" attributes="0">
                           <EmptySpace max="32767" attributes="0"/>
+                          <Component id="ShowStorageLayer" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                       <Group type="103" rootIndex="1" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="1" attributes="0">
-                              <EmptySpace max="32767" attributes="0"/>
-                              <Component id="ShowStorageLayer" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="33" max="-2" attributes="0"/>
+                              <Component id="AddStorageLayer" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace pref="34" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -2200,6 +2251,9 @@
                       <Color blue="61" green="80" red="0" type="rgb"/>
                     </Property>
                   </Properties>
+                  <AuxValues>
+                    <AuxValue name="JLayeredPane.layer" type="java.lang.Integer" value="300"/>
+                  </AuxValues>
 
                   <Layout>
                     <DimensionLayout dim="0">
@@ -2258,7 +2312,7 @@
                                               </Group>
                                           </Group>
                                       </Group>
-                                      <EmptySpace min="0" pref="610" max="32767" attributes="0"/>
+                                      <EmptySpace min="0" pref="622" max="32767" attributes="0"/>
                                   </Group>
                               </Group>
                           </Group>
@@ -2498,6 +2552,9 @@
               <Color blue="61" green="80" red="0" type="rgb"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="componentShown" listener="java.awt.event.ComponentListener" parameters="java.awt.event.ComponentEvent" handler="JobEmpsTabComponentShown"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Job - Employees">
@@ -2642,18 +2699,18 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane7" min="-2" pref="819" max="-2" attributes="0"/>
-                              <EmptySpace pref="80" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="117" max="-2" attributes="0"/>
+                              <Component id="jScrollPane7" min="-2" pref="674" max="-2" attributes="0"/>
+                              <EmptySpace pref="120" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                              <Component id="jScrollPane7" min="-2" pref="94" max="-2" attributes="0"/>
-                              <EmptySpace pref="443" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                              <Component id="jScrollPane7" min="-2" pref="464" max="-2" attributes="0"/>
+                              <EmptySpace pref="82" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -2666,15 +2723,30 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTable" name="jTable7">
+                        <Component class="javax.swing.JTable" name="jobEmpsTable">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="4" rowCount="4">
-                                <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                                <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                                <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                                <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                              <Table columnCount="2" rowCount="27">
+                                <Column editable="true" title="Job ID" type="java.lang.Object"/>
+                                <Column editable="true" title="Employee ID" type="java.lang.Object"/>
                               </Table>
+                            </Property>
+                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                              <TableColumnModel selectionModel="0">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                              </TableColumnModel>
+                            </Property>
+                            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                             </Property>
                           </Properties>
                         </Component>
@@ -2833,6 +2905,9 @@
               <Color blue="61" green="80" red="0" type="rgb"/>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="componentShown" listener="java.awt.event.ComponentListener" parameters="java.awt.event.ComponentEvent" handler="JobTrucksTabComponentShown"/>
+          </Events>
           <Constraints>
             <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
               <JTabbedPaneConstraints tabName="Job - Trucks">
@@ -2960,18 +3035,18 @@
                     <DimensionLayout dim="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="jScrollPane8" min="-2" pref="819" max="-2" attributes="0"/>
-                              <EmptySpace pref="80" max="32767" attributes="0"/>
+                              <EmptySpace min="-2" pref="118" max="-2" attributes="0"/>
+                              <Component id="jScrollPane8" min="-2" pref="676" max="-2" attributes="0"/>
+                              <EmptySpace pref="120" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
                     <DimensionLayout dim="1">
                       <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
-                              <Component id="jScrollPane8" min="-2" pref="94" max="-2" attributes="0"/>
-                              <EmptySpace pref="397" max="32767" attributes="0"/>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace pref="51" max="32767" attributes="0"/>
+                              <Component id="jScrollPane8" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
                           </Group>
                       </Group>
                     </DimensionLayout>
@@ -2984,15 +3059,30 @@
 
                       <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
                       <SubComponents>
-                        <Component class="javax.swing.JTable" name="jTable8">
+                        <Component class="javax.swing.JTable" name="jobTrucksTable">
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="4" rowCount="4">
-                                <Column editable="true" title="Title 1" type="java.lang.Object"/>
-                                <Column editable="true" title="Title 2" type="java.lang.Object"/>
-                                <Column editable="true" title="Title 3" type="java.lang.Object"/>
-                                <Column editable="true" title="Title 4" type="java.lang.Object"/>
+                              <Table columnCount="2" rowCount="25">
+                                <Column editable="true" title="Job ID" type="java.lang.Object"/>
+                                <Column editable="true" title="Truck ID" type="java.lang.Object"/>
                               </Table>
+                            </Property>
+                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                              <TableColumnModel selectionModel="0">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                              </TableColumnModel>
+                            </Property>
+                            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                             </Property>
                           </Properties>
                         </Component>
