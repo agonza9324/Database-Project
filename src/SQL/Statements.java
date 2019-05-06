@@ -17,10 +17,7 @@ import java.util.logging.Logger;
  */
 public class Statements {
     public final static String GET_EMPLOYEES = "SELECT * FROM jdelar1db.Employee;";
-    
-    
-    
-    
+    public final static String GET_TRUCKS = "SELECT * FROM jdelar1db.Truck;";    
     public final static String GET_JOBS = "SELECT * FROM jdelar1db.Job;";    
     public final static String GET_CLIENTS = "SELECT * FROM jdelar1db.Client;";
     public final static String GET_STORAGE = "SELECT * FROM jdelar1db.StorageUnit;";
@@ -44,7 +41,30 @@ public class Statements {
             "WHERE sched.jobID = emps.jobID\n"
             + "ORDER BY jobDate DESC;";
     
-    
+     public static String AddEmployee(String employeeId, String fname, String lname, String dob) {
+        String columns = "(`employeeID`, `fName`, `lName`, `DOB`)";
+        String values = String.format("(\'%s\', \'%s\', \'%s\', \'%s\')", employeeId, fname, lname, dob.toString());
+        String query = "INSERT INTO `jdelar1db`.`Employee` %s VALUES %s;";
+        
+        return String.format(query, columns, values);
+    }
+        
+    public static String DeleteEmployee(String employeeId) {
+        String query = "DELETE FROM `jdelar1db`.`Employee` where (`employeeID`=\'%s\');";
+        return String.format(query, employeeId);
+    }
+    public static String AddTruck(String truckId, String mileage, String truckSize, String registration, String serviceDate) {
+        String columns = "(`truckId`, `mileage`, `truckSize`, `registration`, `serviceDate`)";
+        String values = String.format("(\'%s\', \'%s\', \'%s\', \'%s\', \'%s\')", truckId, mileage, truckSize, registration, serviceDate.toString());
+        String query = "INSERT INTO jdelar1db.Truck %s VALUES %s;";
+        
+        return String.format(query, columns, values);
+    }
+        
+    public static String DeleteTruck(String truckId) {
+        String query = "DELETE FROM `jdelar1db`.`Truck` where (`truckID`=\'%s\');";
+        return String.format(query, truckId);
+    }
     public static String AddJob(String jobId, String fromLoc, String toLoc, String tot_hours, String estCost, String jobDate,
         String clientID, String service) {
         String columns = "(jobId, fromLoc, toLoc, tot_hours, estCost, jobDate, clientID, services)";
@@ -86,5 +106,32 @@ public class Statements {
      public static String DeleteStorage(String unitNumber) {
         String query = "DELETE FROM `jdelar1db`.`StorageUnit` WHERE `unitNumber`=\'%s\'";
         return String.format(query, unitNumber);
+    }
+     public static String AddJobEmps( String jobID, String empID) {
+        
+        String columns = "(jobID, employeeID)";
+        String values = String.format("(\'%s\', \'%s\')", jobID, empID);
+        String query = "INSERT INTO jdelar1db.JobEmps %s VALUES %s;";
+        
+        return String.format(query, columns, values);
+    }
+     
+     public static String DeleteJobEmps(String jobId, String empID) {
+        String query = "DELETE FROM `jdelar1db`.`JobEmps` WHERE `employeeID`=\'%s\'\n"
+                + "AND `jobID`=\'%s\'";
+        return String.format(query, empID, jobId);
+    }
+     public static String AddJobTrucks(String jobID, String truckID) {
+        
+        String columns = "(jobID, truckID)";
+        String values = String.format("(\'%s\', \'%s\')", jobID, truckID);
+        String query = "INSERT INTO jdelar1db.JobTrucks %s VALUES %s;";
+        
+        return String.format(query, columns, values);
+    }
+     
+     public static String DeleteJobTrucks(String truckID) {
+        String query = "DELETE FROM `jdelar1db`.`JobTrucks` WHERE `truckID`=\'%s\'";
+        return String.format(query, truckID);
     }
 }
