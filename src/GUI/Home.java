@@ -93,7 +93,7 @@ public class Home extends javax.swing.JFrame {
         NewTruckService = new javax.swing.JTextField();
         ShowTrucksLayer = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        jTable3 = new javax.swing.JTable();
+        trucksTable = new javax.swing.JTable();
         label2 = new java.awt.Label();
         AddTruck = new javax.swing.JButton();
         DeleteTruck = new javax.swing.JButton();
@@ -413,7 +413,7 @@ public class Home extends javax.swing.JFrame {
                 .addComponent(label6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(518, Short.MAX_VALUE))
+                .addContainerGap(1109, Short.MAX_VALUE))
         );
 
         DetailsPane.addTab("Schedule", ScheduleTab);
@@ -593,15 +593,11 @@ public class Home extends javax.swing.JFrame {
             ShowEmployeesLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ShowEmployeesLayerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 819, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 965, Short.MAX_VALUE))
         );
         ShowEmployeesLayerLayout.setVerticalGroup(
             ShowEmployeesLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ShowEmployeesLayerLayout.createSequentialGroup()
-                .addGap(43, 43, 43)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(446, Short.MAX_VALUE))
+            .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 583, Short.MAX_VALUE)
         );
 
         EmployeeTabLayer.setLayer(AddEmployeeLayer, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -660,6 +656,11 @@ public class Home extends javax.swing.JFrame {
         DetailsPane.addTab("Employees", EmployeesTab);
 
         TrucksTab.setBackground(new java.awt.Color(0, 128, 97));
+        TrucksTab.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                TrucksTabComponentShown(evt);
+            }
+        });
 
         TruckTabLayer.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -727,7 +728,7 @@ public class Home extends javax.swing.JFrame {
                                 .addGroup(AddTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(label14, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addComponent(label15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(0, 813, Short.MAX_VALUE)))
+                                .addGap(0, 834, Short.MAX_VALUE)))
                         .addContainerGap())
                     .addGroup(AddTruckLayerLayout.createSequentialGroup()
                         .addGroup(AddTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -794,7 +795,7 @@ public class Home extends javax.swing.JFrame {
 
         ShowTrucksLayer.setBackground(new java.awt.Color(0, 128, 97));
 
-        jTable3.setModel(new javax.swing.table.DefaultTableModel(
+        trucksTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -802,10 +803,18 @@ public class Home extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Truck ID", "Mileage", "Registration", "Service Date"
             }
-        ));
-        jScrollPane3.setViewportView(jTable3);
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true, true, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(trucksTable);
 
         javax.swing.GroupLayout ShowTrucksLayerLayout = new javax.swing.GroupLayout(ShowTrucksLayer);
         ShowTrucksLayer.setLayout(ShowTrucksLayerLayout);
@@ -813,15 +822,13 @@ public class Home extends javax.swing.JFrame {
             ShowTrucksLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ShowTrucksLayerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 819, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 955, Short.MAX_VALUE))
         );
         ShowTrucksLayerLayout.setVerticalGroup(
             ShowTrucksLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(ShowTrucksLayerLayout.createSequentialGroup()
-                .addGap(44, 44, 44)
-                .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(450, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ShowTrucksLayerLayout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(jScrollPane3, javax.swing.GroupLayout.DEFAULT_SIZE, 568, Short.MAX_VALUE))
         );
 
         TruckTabLayer.setLayer(AddTruckLayer, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -892,7 +899,7 @@ public class Home extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(DeleteTruck, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(label2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(657, Short.MAX_VALUE))
+                .addContainerGap(680, Short.MAX_VALUE))
             .addGroup(TrucksTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(TrucksTabLayout.createSequentialGroup()
                     .addContainerGap()
@@ -908,7 +915,7 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(TrucksTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(AddTruck, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(DeleteTruck, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(601, Short.MAX_VALUE))
+                .addContainerGap(1192, Short.MAX_VALUE))
             .addGroup(TrucksTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(TrucksTabLayout.createSequentialGroup()
                     .addGap(0, 0, Short.MAX_VALUE)
@@ -978,7 +985,7 @@ public class Home extends javax.swing.JFrame {
             .addGroup(ShowJobsLayerLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 819, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addContainerGap(136, Short.MAX_VALUE))
         );
         ShowJobsLayerLayout.setVerticalGroup(
             ShowJobsLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1179,7 +1186,7 @@ public class Home extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(DeleteJob, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(label5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(657, Short.MAX_VALUE))
+                .addContainerGap(680, Short.MAX_VALUE))
             .addGroup(JobsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(JobsTabLayout.createSequentialGroup()
                     .addContainerGap()
@@ -1195,10 +1202,10 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(JobsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(AddJob, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(DeleteJob, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(601, Short.MAX_VALUE))
+                .addContainerGap(1192, Short.MAX_VALUE))
             .addGroup(JobsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, JobsTabLayout.createSequentialGroup()
-                    .addContainerGap(134, Short.MAX_VALUE)
+                    .addContainerGap(729, Short.MAX_VALUE)
                     .addComponent(JobTabLayer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap()))
         );
@@ -1363,7 +1370,7 @@ public class Home extends javax.swing.JFrame {
             .addGroup(ShowClientsLayerLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 819, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addContainerGap(143, Short.MAX_VALUE))
         );
         ShowClientsLayerLayout.setVerticalGroup(
             ShowClientsLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1403,7 +1410,7 @@ public class Home extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(DeleteClient, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(label4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(657, Short.MAX_VALUE))
+                .addContainerGap(680, Short.MAX_VALUE))
             .addGroup(ClientsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(ClientsTabLayout.createSequentialGroup()
                     .addContainerGap()
@@ -1419,12 +1426,12 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(ClientsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(AddClient, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(DeleteClient, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(601, Short.MAX_VALUE))
+                .addContainerGap(1192, Short.MAX_VALUE))
             .addGroup(ClientsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(ClientsTabLayout.createSequentialGroup()
                     .addGap(149, 149, 149)
                     .addComponent(ClientTabLayer, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(72, Short.MAX_VALUE)))
+                    .addContainerGap(663, Short.MAX_VALUE)))
         );
 
         DetailsPane.addTab("Clients", ClientsTab);
@@ -1556,7 +1563,7 @@ public class Home extends javax.swing.JFrame {
                                         .addComponent(NewStorageSize, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
                                         .addComponent(NewStorageLoc)
                                         .addComponent(newUnitNum)))))
-                        .addGap(0, 610, Short.MAX_VALUE))))
+                        .addGap(0, 622, Short.MAX_VALUE))))
         );
         AddStorageLayerLayout.setVerticalGroup(
             AddStorageLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1667,7 +1674,7 @@ public class Home extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(DeleteStorage, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(label3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(556, Short.MAX_VALUE))
+                .addContainerGap(579, Short.MAX_VALUE))
             .addGroup(StorageTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(StorageTabLayout.createSequentialGroup()
                     .addContainerGap()
@@ -1683,12 +1690,12 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(StorageTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(AddStorage, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(DeleteStorage, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(601, Short.MAX_VALUE))
+                .addContainerGap(1192, Short.MAX_VALUE))
             .addGroup(StorageTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(StorageTabLayout.createSequentialGroup()
                     .addGap(109, 109, 109)
                     .addComponent(StorageTabLayer, javax.swing.GroupLayout.PREFERRED_SIZE, 507, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(110, Short.MAX_VALUE)))
+                    .addContainerGap(701, Short.MAX_VALUE)))
         );
 
         DetailsPane.addTab("Storage Units", StorageTab);
@@ -1822,11 +1829,11 @@ public class Home extends javax.swing.JFrame {
                         .addGroup(AddJobEmpLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(label41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(AddJobEmpLayerLayout.createSequentialGroup()
-                                .addGap(0, 155, Short.MAX_VALUE)
+                                .addGap(0, 167, Short.MAX_VALUE)
                                 .addGroup(AddJobEmpLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(NewJobEmpEmpId, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
                                     .addComponent(newJobEmpJobId))))
-                        .addGap(0, 636, Short.MAX_VALUE))))
+                        .addGap(0, 647, Short.MAX_VALUE))))
             .addGroup(AddJobEmpLayerLayout.createSequentialGroup()
                 .addGap(75, 75, 75)
                 .addComponent(SubmitAddJobEmp)
@@ -1898,7 +1905,7 @@ public class Home extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(DeleteJobEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(label38, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(296, Short.MAX_VALUE))
+                .addContainerGap(319, Short.MAX_VALUE))
             .addGroup(JobEmpsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(JobEmpsTabLayout.createSequentialGroup()
                     .addContainerGap()
@@ -1914,12 +1921,12 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(JobEmpsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(AddJobEmp, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(DeleteJobEmp, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(603, Short.MAX_VALUE))
+                .addContainerGap(1194, Short.MAX_VALUE))
             .addGroup(JobEmpsTabLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(JobEmpsTabLayout.createSequentialGroup()
                     .addGap(109, 109, 109)
                     .addComponent(JobEmpTabLayer, javax.swing.GroupLayout.PREFERRED_SIZE, 507, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap(110, Short.MAX_VALUE)))
+                    .addContainerGap(701, Short.MAX_VALUE)))
         );
 
         DetailsPane.addTab("Job - Employees", JobEmpsTab);
@@ -2077,7 +2084,7 @@ public class Home extends javax.swing.JFrame {
                 .addGroup(AddJobTruckLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SubmitAddJobTruck)
                     .addComponent(CancelAddJobTruck))
-                .addContainerGap(372, Short.MAX_VALUE))
+                .addContainerGap(967, Short.MAX_VALUE))
         );
 
         jLayeredPane1.setLayer(ShowJobTrucksLayer, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -2116,7 +2123,7 @@ public class Home extends javax.swing.JFrame {
                         .addComponent(AddJobTruck, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(DeleteJobTruck, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(375, Short.MAX_VALUE))
+                .addContainerGap(398, Short.MAX_VALUE))
             .addGroup(JobTrucksTabLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jLayeredPane1)
@@ -2344,7 +2351,24 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_AddJobMouseClicked
 
     private void DeleteTruckActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteTruckActionPerformed
-        // TODO add your handling code here:
+        int row = trucksTable.getSelectedRow();
+        if (row == -1) return;
+        
+        String truckId = trucksTable.getValueAt(row, 0).toString();
+        String query = Statements.DeleteTruck(truckId);
+        Connection conn = Connector.getConnection();
+        
+        try (Statement stmt = conn.createStatement()){
+            int numDeleted = stmt.executeUpdate(query);
+            
+            if (numDeleted > 0) {
+                //success
+            } else {
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_DeleteTruckActionPerformed
 
     private void DeleteTruckMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteTruckMouseClicked
@@ -2357,6 +2381,7 @@ public class Home extends javax.swing.JFrame {
 
     private void AddTruckMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AddTruckMouseClicked
         // TODO add your handling code here:
+ 
         AddTruckLayer.setVisible(true);
         ShowTrucksLayer.setVisible(false);
     }//GEN-LAST:event_AddTruckMouseClicked
@@ -2367,6 +2392,24 @@ public class Home extends javax.swing.JFrame {
 
     private void SubmitAddTruckMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitAddTruckMouseClicked
         // TODO add your handling code here:
+        String truckId = newTruckId.getText();
+        String truckSize = NewTruckSize.getText();
+        String mileage = NewTruckMileage.getText();
+        String registration = NewTruckRegistration.getText();
+        String serviceDate = NewTruckService.getText();
+        
+        String dob = NewEmployeeDOB.getText();
+        
+        String sql = Statements.AddTruck(truckId, mileage, truckSize, registration, serviceDate);
+        
+        Connection conn = Connector.getConnection();
+        try {
+            Statement stmt = conn.createStatement();
+            stmt.executeUpdate(sql); 
+        } catch (SQLException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
         AddTruckLayer.setVisible(false);
         ShowTrucksLayer.setVisible(true);
     }//GEN-LAST:event_SubmitAddTruckMouseClicked
@@ -2382,7 +2425,23 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_newTruckIdActionPerformed
 
     private void SubmitAddEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitAddEmployeeMouseClicked
-        // TODO add your handling code here:
+        String employeeId = newEmployeeId.getText();
+        String fname = NewEmployeeFName.getText();
+        String lname = NewEmployeeLName.getText();
+        String dob = NewEmployeeDOB.getText();
+        
+        String sql = Statements.AddEmployee(employeeId, fname, lname, dob);
+        
+        Connection conn = Connector.getConnection();
+        try {
+            Statement stmt = conn.createStatement();
+            stmt.executeUpdate(sql); 
+        } catch (SQLException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        
+        
         AddEmployeeLayer.setVisible(false);
         ShowEmployeesLayer.setVisible(true);
     }//GEN-LAST:event_SubmitAddEmployeeMouseClicked
@@ -2395,6 +2454,24 @@ public class Home extends javax.swing.JFrame {
 
     private void DeleteEmployeeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DeleteEmployeeActionPerformed
         // TODO add your handling code here:
+        int row = employeesTable.getSelectedRow();
+        if (row == -1) return;
+        
+        String employeeId = employeesTable.getValueAt(row, 0).toString();
+        String query = Statements.DeleteEmployee(employeeId);
+        Connection conn = Connector.getConnection();
+        
+        try (Statement stmt = conn.createStatement()){
+            int numDeleted = stmt.executeUpdate(query);
+            
+            if (numDeleted > 0) {
+                //success
+            } else {
+                
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }//GEN-LAST:event_DeleteEmployeeActionPerformed
 
     private void DeleteEmployeeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteEmployeeMouseClicked
@@ -2420,6 +2497,7 @@ public class Home extends javax.swing.JFrame {
 
     private void AddJobEmpActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddJobEmpActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_AddJobEmpActionPerformed
 
     private void DeleteJobEmpMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DeleteJobEmpMouseClicked
@@ -2514,64 +2592,16 @@ public class Home extends javax.swing.JFrame {
     }//GEN-LAST:event_DetailsPaneComponentShown
 
     private void employeesTableComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_employeesTableComponentShown
-        try {
-            DefaultTableModel dm = (DefaultTableModel) employeesTable.getModel();
-            int rowCount = dm.getRowCount();
-            //Remove rows one by one from the end of the table
-            for (int i = rowCount - 1; i >= 0; i--) {
-                dm.removeRow(i);
-            }
-            
-            
-            Connection connection = Connector.getConnection();
-            Statement queryStatement = connection.createStatement();
-            
-            ResultSet results = queryStatement.executeQuery(Statements.GET_EMPLOYEES);
-            while(results.next())
-            {
-                dm.addRow(new String[] {
-                    results.getString("employeeID"),
-                    results.getString("fName"),
-                    results.getString("lName"),
-                    results.getString("DOB")
-                });
-                
-            }
-        } catch (SQLException ex) {
-            System.out.println("Error updating Employees table.");
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        }
+
     }//GEN-LAST:event_employeesTableComponentShown
 
     private void EmployeesTabComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_EmployeesTabComponentShown
-        try {
-            DefaultTableModel dm = (DefaultTableModel) employeesTable.getModel();
-            int rowCount = dm.getRowCount();
-            //Remove rows one by one from the end of the table
-            for (int i = rowCount - 1; i >= 0; i--) {
-                dm.removeRow(i);
-            }
-            
-            
-            Connection connection = Connector.getConnection();
-            Statement queryStatement = connection.createStatement();
-            
-            ResultSet results = queryStatement.executeQuery(Statements.GET_EMPLOYEES);
-            while(results.next())
-            {
-                dm.addRow(new String[] {
-                    results.getString("employeeID"),
-                    results.getString("fName"),
-                    results.getString("lName"),
-                    results.getString("DOB")
-                });
-                
-            }
-        } catch (SQLException ex) {
-            System.out.println("Error updating Employees table.");
-            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        TableUtils.PopulateTableFromStatement(employeesTable, Statements.GET_EMPLOYEES);
     }//GEN-LAST:event_EmployeesTabComponentShown
+
+    private void TrucksTabComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_TrucksTabComponentShown
+        TableUtils.PopulateTableFromStatement(trucksTable, Statements.GET_TRUCKS);
+    }//GEN-LAST:event_TrucksTabComponentShown
 
     /**
      * @param args the command line arguments
@@ -2722,7 +2752,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTable jTable3;
     private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
@@ -2781,5 +2810,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField newJobTruckJobId;
     private javax.swing.JTextField newTruckId;
     private javax.swing.JTextField newUnitNum;
+    private javax.swing.JTable trucksTable;
     // End of variables declaration//GEN-END:variables
 }
