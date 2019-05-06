@@ -21,43 +21,10 @@ import javax.swing.table.DefaultTableModel;
  */
 public class Home extends javax.swing.JFrame {
 
-    public static DefaultTableModel buildTableModel(ResultSet rs)
-        throws SQLException {
-
-    ResultSetMetaData metaData = rs.getMetaData();
-
-    // names of columns
-    Vector<String> columnNames = new Vector<String>();
-    int columnCount = metaData.getColumnCount();
-    for (int column = 1; column <= columnCount; column++) {
-        columnNames.add(metaData.getColumnName(column));
-    }
-
-    // data of the table
-    Vector<Vector<Object>> data = new Vector<>();
-    while (rs.next()) {
-        Vector<Object> vector = new Vector<>();
-        for (int columnIndex = 1; columnIndex <= columnCount; columnIndex++) {
-            vector.add(rs.getObject(columnIndex));
-        }
-        data.add(vector);
-    }
-
-    return new DefaultTableModel(data, columnNames);
-
-}
-    private ResultSet rs;
     /**
      * Creates new form Home
      */
     public Home() {
-        try{
-            Connection connection = Connector.getConnection();
-            Statement stmt = connection.createStatement();
-            rs = stmt.executeQuery("select * from ");
-        }catch(Exception e){
-            e.printStackTrace();
-        }
         initComponents();
     }
 
@@ -137,13 +104,6 @@ public class Home extends javax.swing.JFrame {
         JobTabLayer = new javax.swing.JLayeredPane();
         ShowJobsLayer = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        try{
-            Connection connection = Connector.getConnection();
-            Statement stmt = connection.createStatement();
-            rs = stmt.executeQuery("select * from Job");
-        }catch(Exception e){
-            e.printStackTrace();
-        }
         jobsTable = new javax.swing.JTable();
         AddJobLayer = new javax.swing.JPanel();
         newJobId = new javax.swing.JTextField();
@@ -186,7 +146,7 @@ public class Home extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         ShowClientsLayer = new javax.swing.JPanel();
         jScrollPane5 = new javax.swing.JScrollPane();
-        jTable5 = new javax.swing.JTable();
+        clientTable = new javax.swing.JTable();
         StorageTab = new javax.swing.JPanel();
         label3 = new java.awt.Label();
         AddStorage = new javax.swing.JButton();
@@ -209,7 +169,7 @@ public class Home extends javax.swing.JFrame {
         NewStorageClient = new javax.swing.JTextField();
         ShowStorageLayer = new javax.swing.JPanel();
         jScrollPane6 = new javax.swing.JScrollPane();
-        jTable6 = new javax.swing.JTable();
+        storageTable = new javax.swing.JTable();
         JobEmpsTab = new javax.swing.JPanel();
         label38 = new java.awt.Label();
         AddJobEmp = new javax.swing.JButton();
@@ -959,6 +919,11 @@ public class Home extends javax.swing.JFrame {
         DetailsPane.addTab("Trucks", TrucksTab);
 
         JobsTab.setBackground(new java.awt.Color(0, 128, 97));
+        JobsTab.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                JobsTabComponentShown(evt);
+            }
+        });
 
         label5.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         label5.setForeground(new java.awt.Color(204, 204, 204));
@@ -998,12 +963,17 @@ public class Home extends javax.swing.JFrame {
 
         ShowJobsLayer.setBackground(new java.awt.Color(0, 128, 97));
 
-        try{
-            jobsTable.setModel(buildTableModel(rs));
-        }catch(Exception e){
-            e.printStackTrace();
-        }
-        JOptionPane.showMessageDialog(null, new JScrollPane(jobsTable));
+        jobsTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
+            },
+            new String [] {
+                "Job Id", "From Location", "To Location", "Total Hours", "Estimated Cost", "Job Date", "Client Id", "Service"
+            }
+        ));
         jScrollPane4.setViewportView(jobsTable);
 
         javax.swing.GroupLayout ShowJobsLayerLayout = new javax.swing.GroupLayout(ShowJobsLayer);
@@ -1012,15 +982,15 @@ public class Home extends javax.swing.JFrame {
             ShowJobsLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ShowJobsLayerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 819, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(113, Short.MAX_VALUE))
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 918, Short.MAX_VALUE)
+                .addContainerGap())
         );
         ShowJobsLayerLayout.setVerticalGroup(
             ShowJobsLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ShowJobsLayerLayout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(425, Short.MAX_VALUE))
+                .addContainerGap()
+                .addComponent(jScrollPane4, javax.swing.GroupLayout.DEFAULT_SIZE, 222, Short.MAX_VALUE)
+                .addGap(331, 331, 331))
         );
 
         AddJobLayer.setBackground(new java.awt.Color(0, 128, 97));
@@ -1241,6 +1211,11 @@ public class Home extends javax.swing.JFrame {
         DetailsPane.addTab("Jobs", JobsTab);
 
         ClientsTab.setBackground(new java.awt.Color(0, 128, 97));
+        ClientsTab.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                ClientsTabComponentShown(evt);
+            }
+        });
 
         label4.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         label4.setForeground(new java.awt.Color(204, 204, 204));
@@ -1378,7 +1353,7 @@ public class Home extends javax.swing.JFrame {
 
         ShowClientsLayer.setBackground(new java.awt.Color(0, 128, 97));
 
-        jTable5.setModel(new javax.swing.table.DefaultTableModel(
+        clientTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -1386,10 +1361,15 @@ public class Home extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Client Id", "First Name", "Last Name", "Phone Number"
             }
         ));
-        jScrollPane5.setViewportView(jTable5);
+        clientTable.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                clientTableComponentShown(evt);
+            }
+        });
+        jScrollPane5.setViewportView(clientTable);
 
         javax.swing.GroupLayout ShowClientsLayerLayout = new javax.swing.GroupLayout(ShowClientsLayer);
         ShowClientsLayer.setLayout(ShowClientsLayerLayout);
@@ -1397,15 +1377,15 @@ public class Home extends javax.swing.JFrame {
             ShowClientsLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ShowClientsLayerLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 819, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(120, Short.MAX_VALUE))
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.DEFAULT_SIZE, 920, Short.MAX_VALUE)
+                .addContainerGap())
         );
         ShowClientsLayerLayout.setVerticalGroup(
             ShowClientsLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(ShowClientsLayerLayout.createSequentialGroup()
                 .addGap(38, 38, 38)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(373, Short.MAX_VALUE))
+                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 237, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(230, Short.MAX_VALUE))
         );
 
         ClientTabLayer.setLayer(AddClientLayer, javax.swing.JLayeredPane.DEFAULT_LAYER);
@@ -1465,6 +1445,11 @@ public class Home extends javax.swing.JFrame {
         DetailsPane.addTab("Clients", ClientsTab);
 
         StorageTab.setBackground(new java.awt.Color(0, 128, 97));
+        StorageTab.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                StorageTabComponentShown(evt);
+            }
+        });
 
         label3.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         label3.setForeground(new java.awt.Color(204, 204, 204));
@@ -1631,7 +1616,7 @@ public class Home extends javax.swing.JFrame {
 
         ShowStorageLayer.setBackground(new java.awt.Color(0, 128, 97));
 
-        jTable6.setModel(new javax.swing.table.DefaultTableModel(
+        storageTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -1639,10 +1624,10 @@ public class Home extends javax.swing.JFrame {
                 {null, null, null, null}
             },
             new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
+                "Unit Number", "Location", "Rate", "Size"
             }
         ));
-        jScrollPane6.setViewportView(jTable6);
+        jScrollPane6.setViewportView(storageTable);
 
         javax.swing.GroupLayout ShowStorageLayerLayout = new javax.swing.GroupLayout(ShowStorageLayer);
         ShowStorageLayer.setLayout(ShowStorageLayerLayout);
@@ -1857,7 +1842,7 @@ public class Home extends javax.swing.JFrame {
                         .addGroup(AddJobEmpLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(label41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(AddJobEmpLayerLayout.createSequentialGroup()
-                                .addGap(0, 155, Short.MAX_VALUE)
+                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(AddJobEmpLayerLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(NewJobEmpEmpId, javax.swing.GroupLayout.DEFAULT_SIZE, 131, Short.MAX_VALUE)
                                     .addComponent(newJobEmpJobId))))
@@ -2266,8 +2251,6 @@ public class Home extends javax.swing.JFrame {
 
     private void StorageTabLayerMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StorageTabLayerMouseClicked
         // TODO add your handling code here:
-        AddStorageLayer.setVisible(false);
-        ShowStorageLayer.setVisible(true);
     }//GEN-LAST:event_StorageTabLayerMouseClicked
 
     private void SubmitAddStorageMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SubmitAddStorageMouseClicked
@@ -2608,6 +2591,105 @@ public class Home extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_EmployeesTabComponentShown
 
+    private void JobsTabComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_JobsTabComponentShown
+        try {
+            DefaultTableModel dm = (DefaultTableModel) jobsTable.getModel();
+            int rowCount = dm.getRowCount();
+            //Remove rows one by one from the end of the table
+            for (int i = rowCount - 1; i >= 0; i--) {
+                dm.removeRow(i);
+            }
+            
+            
+            Connection connection = Connector.getConnection();
+            Statement queryStatement = connection.createStatement();
+            
+            ResultSet results = queryStatement.executeQuery(Statements.GET_JOBS);
+            while(results.next())
+            {
+                dm.addRow(new String[] {
+                    results.getString("jobID"),
+                    results.getString("fromLoc"),
+                    results.getString("toLoc"),
+                    results.getString("tot_hours"),
+                    results.getString("estCost"),
+                    results.getString("jobDate"),
+                    results.getString("clientID"),
+                    results.getString("services")
+                });
+                
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error updating Jobs table.");
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_JobsTabComponentShown
+
+    private void clientTableComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_clientTableComponentShown
+        
+    }//GEN-LAST:event_clientTableComponentShown
+
+    private void ClientsTabComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_ClientsTabComponentShown
+        try {
+            DefaultTableModel dm = (DefaultTableModel) clientTable.getModel();
+            int rowCount = dm.getRowCount();
+            //Remove rows one by one from the end of the table
+            for (int i = rowCount - 1; i >= 0; i--) {
+                dm.removeRow(i);
+            }
+            
+            
+            Connection connection = Connector.getConnection();
+            Statement queryStatement = connection.createStatement();
+            
+            ResultSet results = queryStatement.executeQuery(Statements.GET_CLIENTS);
+            while(results.next())
+            {
+                dm.addRow(new String[] {
+                    results.getString("clientID"),
+                    results.getString("fName"),
+                    results.getString("lName"),
+                    results.getString("phone"),
+                });
+                
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error updating Clients table.");
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_ClientsTabComponentShown
+
+    private void StorageTabComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_StorageTabComponentShown
+       try {
+            DefaultTableModel dm = (DefaultTableModel) storageTable.getModel();
+            int rowCount = dm.getRowCount();
+            //Remove rows one by one from the end of the table
+            for (int i = rowCount - 1; i >= 0; i--) {
+                dm.removeRow(i);
+            }
+            
+            
+            Connection connection = Connector.getConnection();
+            Statement queryStatement = connection.createStatement();
+            
+            ResultSet results = queryStatement.executeQuery(Statements.GET_STORAGE);
+            while(results.next())
+            {
+                dm.addRow(new String[] {
+                    results.getString("unitNumber"),
+                    results.getString("location"),
+                    results.getString("rate"),
+                    results.getString("size"),
+                    results.getString("clientID"),
+                });
+                
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error updating Storage table.");
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_StorageTabComponentShown
+
     /**
      * @param args the command line arguments
      */
@@ -2738,6 +2820,7 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JLayeredPane TruckTabLayer;
     private javax.swing.JButton TrucksButton;
     private javax.swing.JPanel TrucksTab;
+    private javax.swing.JTable clientTable;
     private javax.swing.JTable employeesTable;
     private javax.swing.JLayeredPane jLayeredPane1;
     private javax.swing.JPanel jPanel2;
@@ -2758,8 +2841,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable5;
-    private javax.swing.JTable jTable6;
     private javax.swing.JTable jTable7;
     private javax.swing.JTable jTable8;
     private javax.swing.JTextField jTextField1;
@@ -2816,5 +2897,6 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTextField newJobTruckJobId;
     private javax.swing.JTextField newTruckId;
     private javax.swing.JTextField newUnitNum;
+    private javax.swing.JTable storageTable;
     // End of variables declaration//GEN-END:variables
 }
