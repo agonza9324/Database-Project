@@ -5,8 +5,20 @@
  */
 package GUI;
 
+import Models.Job;
+import SQL.Connector;
+import java.lang.reflect.Field;
 import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import javax.swing.JScrollPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -14,10 +26,43 @@ import java.sql.Statement;
  */
 public class Home extends javax.swing.JFrame {
 
+    public static DefaultTableModel buildTableModel(ResultSet rs)
+        throws SQLException {
+
+    ResultSetMetaData metaData = rs.getMetaData();
+
+    // names of columns
+    Vector<String> columnNames = new Vector<String>();
+    int columnCount = metaData.getColumnCount();
+    for (int column = 1; column <= columnCount; column++) {
+        columnNames.add(metaData.getColumnName(column));
+    }
+
+    // data of the table
+    Vector<Vector<Object>> data = new Vector<>();
+    while (rs.next()) {
+        Vector<Object> vector = new Vector<>();
+        for (int columnIndex = 1; columnIndex <= columnCount; columnIndex++) {
+            vector.add(rs.getObject(columnIndex));
+        }
+        data.add(vector);
+    }
+
+    return new DefaultTableModel(data, columnNames);
+
+}
+    private ResultSet rs;
     /**
      * Creates new form Home
      */
     public Home() {
+        try{
+            Connection connection = Connector.getConnection();
+            Statement stmt = connection.createStatement();
+            rs = stmt.executeQuery("select * from ");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
         initComponents();
     }
 
@@ -97,7 +142,14 @@ public class Home extends javax.swing.JFrame {
         JobTabLayer = new javax.swing.JLayeredPane();
         ShowJobsLayer = new javax.swing.JPanel();
         jScrollPane4 = new javax.swing.JScrollPane();
-        jTable4 = new javax.swing.JTable();
+        try{
+            Connection connection = Connector.getConnection();
+            Statement stmt = connection.createStatement();
+            rs = stmt.executeQuery("select * from Job");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        jobsTable = new javax.swing.JTable();
         AddJobLayer = new javax.swing.JPanel();
         newJobId = new javax.swing.JTextField();
         label17 = new java.awt.Label();
@@ -928,18 +980,13 @@ public class Home extends javax.swing.JFrame {
 
         ShowJobsLayer.setBackground(new java.awt.Color(0, 128, 97));
 
-        jTable4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
-            },
-            new String [] {
-                "Title 1", "Title 2", "Title 3", "Title 4"
-            }
-        ));
-        jScrollPane4.setViewportView(jTable4);
+        try{
+            jobsTable.setModel(buildTableModel(rs));
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+        JOptionPane.showMessageDialog(null, new JScrollPane(jobsTable));
+        jScrollPane4.setViewportView(jobsTable);
 
         javax.swing.GroupLayout ShowJobsLayerLayout = new javax.swing.GroupLayout(ShowJobsLayer);
         ShowJobsLayer.setLayout(ShowJobsLayerLayout);
@@ -2628,12 +2675,12 @@ public class Home extends javax.swing.JFrame {
     private javax.swing.JTable jTable1;
     private javax.swing.JTable jTable2;
     private javax.swing.JTable jTable3;
-    private javax.swing.JTable jTable4;
     private javax.swing.JTable jTable5;
     private javax.swing.JTable jTable6;
     private javax.swing.JTable jTable7;
     private javax.swing.JTable jTable8;
     private javax.swing.JTextField jTextField1;
+    private javax.swing.JTable jobsTable;
     private java.awt.Label label1;
     private java.awt.Label label10;
     private java.awt.Label label11;
