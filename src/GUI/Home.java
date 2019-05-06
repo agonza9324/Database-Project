@@ -419,6 +419,11 @@ public class Home extends javax.swing.JFrame {
         DetailsPane.addTab("Schedule", ScheduleTab);
 
         EmployeesTab.setBackground(new java.awt.Color(0, 128, 97));
+        EmployeesTab.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                EmployeesTabComponentShown(evt);
+            }
+        });
 
         label1.setFont(new java.awt.Font("Dialog", 1, 36)); // NOI18N
         label1.setForeground(new java.awt.Color(204, 204, 204));
@@ -2537,6 +2542,36 @@ public class Home extends javax.swing.JFrame {
             Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_employeesTableComponentShown
+
+    private void EmployeesTabComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_EmployeesTabComponentShown
+        try {
+            DefaultTableModel dm = (DefaultTableModel) employeesTable.getModel();
+            int rowCount = dm.getRowCount();
+            //Remove rows one by one from the end of the table
+            for (int i = rowCount - 1; i >= 0; i--) {
+                dm.removeRow(i);
+            }
+            
+            
+            Connection connection = Connector.getConnection();
+            Statement queryStatement = connection.createStatement();
+            
+            ResultSet results = queryStatement.executeQuery(Statements.GET_EMPLOYEES);
+            while(results.next())
+            {
+                dm.addRow(new String[] {
+                    results.getString("employeeID"),
+                    results.getString("fName"),
+                    results.getString("lName"),
+                    results.getString("DOB")
+                });
+                
+            }
+        } catch (SQLException ex) {
+            System.out.println("Error updating Employees table.");
+            Logger.getLogger(Home.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_EmployeesTabComponentShown
 
     /**
      * @param args the command line arguments
